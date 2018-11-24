@@ -1,6 +1,6 @@
 # asrock-z370m-pro4-hackintosh
 
-该项目只针对我的配置，仅供参考，不要盲目使用。软件版本信息：
+该项目只针对我的配置，仅供参考，不要盲目使用。适用软件版本信息：
 
 macOS version：10.14.1 (18B75)
 
@@ -30,25 +30,36 @@ Wi-Fi&BT：BCM943602CS
 
 ### USB port patching
 
-为了让 USB 和睡眠正常的工作需要使用制作 USB 补丁，macOS 10.14.1 下有 USB 端口限制，需要安装之前的版本来制作 USB 补丁，以 macOS 10.13.6 下制作的安装补丁为例。
+为了让 USB 和睡眠正常的工作需要制作 USB 补丁，macOS 10.14.1 下有 USB 端口限制，需要安装之前的版本来制作 USB 补丁，以 macOS 10.13.6 下制作的安装补丁为例。
 
 注意事项：
 
-1 安装完 macOS 10.13.6 后需要使用 Clover 打 USB 补丁，参考 [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/)。
+1 安装完 macOS 10.13.6 后需要使用 Clover 打 USB 补丁，如果不打 USB 补丁你只能看到 15 个 USB 端口，打补丁方法参考 [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/)。
 
 
-2 安装完补丁后重启电脑，按照 [USB Port Patching](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-6-5.254559/) 的教程来制作属于你自己的 USB 补丁。（⚠️：这篇教程里面的第七步 Reboot with -uia_exclude_hs boot flag 的意思是将第三步添加的 `-uia_exclude_ss` 替换为 `-uia_exclude_hs`）。
+2 安装完上面的补丁后重启电脑，按照 [USB Port Patching](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-6-5.254559/) 的教程来制作属于你自己的 USB 补丁。（⚠️：这篇教程里面的第七步 Reboot with -uia_exclude_hs boot flag 的意思是将第三步添加的 `-uia_exclude_ss` 替换为 `-uia_exclude_hs`）。补丁制作完后你也就不需要制作补丁时添加的 custom flags 了。
 
 3 补丁制作完成后一定要好好保存，因为是针对自己电脑独有的文件，网上找不到第二份。
 
-## 黑苹果完美性
+## 完美么？
 
-1. iMessage、iCloud、Handoff、continuity 等苹果专属服务都可以正常工作，甚至可以用我的 Apple Watch 解锁这台黑苹果。
-2. USB、睡眠、声音、显卡和变频等硬件也都正常工作。
+暂未发现任何问题。
 
-## 黑苹果不完美的地方
+## 升级系统怎么办？
 
-暂未发现
+不要第一时间升级，新系统推送后过两周去社区看看问题反馈。决定升级前备份好数据，要做到即使升级失败也能会系统回滚到历史版本。
+
+## USB port mapping
+
+主板背部：
+
+![port mapping](./images/motherboard-usb-mapping.png)
+
+蓝牙：HS05
+
+机箱前置 USB（上）：HS09 SS06
+
+机箱前置 USB（下）：HS10 SS05
 
 ## 参考链接：
 
