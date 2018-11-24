@@ -12,7 +12,7 @@ CPU: Intel i5 8400
 
 主板：[Asrock z370m Pro4](https://www.asrock.com/MB/Intel/Z370M%20Pro4/index.asp)
 
-显卡：[蓝宝石 RX560D 4G D5 白金版 OC(75W)](http://www.sapphiretech.com/productdetial.asp?pid=C12A4F7E-B791-4DDB-8D32-47BB6ACA68BD&lang=chs)
+显卡：[蓝宝石RX560 4G D5 白金版 OC (75W)](http://www.sapphiretech.com/productdetial.asp?pid=C12A4F7E-B791-4DDB-8D32-47BB6ACA68BD&lang=chs)
 
 Wi-Fi&BT：BCM943602CS
 
