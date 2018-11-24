@@ -3,15 +3,21 @@
 该项目只针对我的配置，仅供参考，不要盲目使用。软件版本信息：
 
 macOS version：10.14.1 (18B75)
+
 BIOS version：3.20
 
 ## 硬件
 
 CPU: Intel i5 8400
+
 主板：[Asrock z370m Pro4](https://www.asrock.com/MB/Intel/Z370M%20Pro4/index.asp)
+
 显卡：[蓝宝石 RX560D 4G D5 白金版 OC(75W)](http://www.sapphiretech.com/productdetial.asp?pid=C12A4F7E-B791-4DDB-8D32-47BB6ACA68BD&lang=chs)
+
 Wi-Fi&BT：BCM943602CS
+
 内存：Micron 8G DDR4 2666 x 2
+
 硬盘：Intel 760P系列 512G NVMe M.2
 
 显卡和 Wi-Fi&BT 在 macOS 下插上就能用，不需要任何配置。
