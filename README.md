@@ -24,22 +24,42 @@ Wi-Fi&BT：BCM943602CS
 
 ## 安装注意事项
 
+### 音频
+
+为了让音频正常工作，Audio Inject 的值必须为 `1`。
+
 ### 使用 USB2.0 接口安装
 
 制作完成 USB 安装盘后务必插在 USB2.0 的接口上安装，否则安装会报错。
 
-### USB port patching
+### 让 USB 顺利工作
+
+USB 不正常工作的表现有：
+
+1. USB 不能识别。
+2. 睡眠后会立即醒来。
+3. USB 3.0 的速度会限制在 480 Mbps。
+4. 重启后 USB 设备丢失，需要重新插拔。
 
 为了让 USB 和睡眠正常的工作需要制作 USB 补丁，macOS 10.14.1 下有 USB 端口限制，需要安装之前的版本来制作 USB 补丁，以 macOS 10.13.6 下制作的安装补丁为例。
 
-注意事项：
+#### 注意事项：
 
-1 安装完 macOS 10.13.6 后需要使用 Clover 打 USB 补丁，如果不打 USB 补丁你只能看到 15 个 USB 端口，打补丁方法参考 [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/)。
+**USB 补丁**
 
+安装完 macOS 10.13.6 后需要使用 Clover 打 USB 补丁，如果不打 USB 补丁你只能看到 15 个 USB 端口，打补丁方法参考 [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/)。
 
-2 安装完上面的补丁后重启电脑，按照 [USB Port Patching](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-6-5.254559/) 的教程来制作属于你自己的 USB 补丁。（⚠️：这篇教程里面的第七步 Reboot with -uia_exclude_hs boot flag 的意思是将第三步添加的 `-uia_exclude_ss` 替换为 `-uia_exclude_hs`）。补丁制作完后也就不需要制作补丁时添加的 custom flags 和 添加的 DSDT 了，可以看看我的 config.plist，很干净。
+**FB patcher**
 
-3 补丁制作完成后一定要好好保存，因为是针对自己电脑独有的文件，网上找不到第二份。
+安装完上面的补丁后重启电脑应该可以看到所有的 USB 接口了，按照 [USB Port Patching](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-6-5.254559/) 的教程来制作属于你自己的 USB 补丁。
+
+⚠️ 这篇教程里面的第七步 "Reboot with -uia_exclude_hs boot flag" 的意思是将第三步添加的 `-uia_exclude_ss` 替换为 `-uia_exclude_hs`。
+
+⚠️ 补丁制作完后也就不需要制作补丁时添加的 custom flags 和 添加的 DSDT 了，可以看看我的 config.plist，很干净。
+
+**保存好制作的补丁**
+
+补丁制作完成后一定要好好保存，因为是针对自己电脑独有的文件，网上找不到第二份。
 
 ## 完美么？
 
@@ -52,6 +72,8 @@ Wi-Fi&BT：BCM943602CS
 ## USB port mapping
 
 ⚠️ 只针对我自己的硬件情况。
+
+HSXX 代表的是 USB2.0，SSXX 代表的是 USB3.0。
 
 主板背部：
 
