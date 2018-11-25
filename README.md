@@ -37,7 +37,7 @@ Wi-Fi&BT：BCM943602CS
 1 安装完 macOS 10.13.6 后需要使用 Clover 打 USB 补丁，如果不打 USB 补丁你只能看到 15 个 USB 端口，打补丁方法参考 [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/)。
 
 
-2 安装完上面的补丁后重启电脑，按照 [USB Port Patching](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-6-5.254559/) 的教程来制作属于你自己的 USB 补丁。（⚠️：这篇教程里面的第七步 Reboot with -uia_exclude_hs boot flag 的意思是将第三步添加的 `-uia_exclude_ss` 替换为 `-uia_exclude_hs`）。补丁制作完后你也就不需要制作补丁时添加的 custom flags 了。
+2 安装完上面的补丁后重启电脑，按照 [USB Port Patching](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-6-5.254559/) 的教程来制作属于你自己的 USB 补丁。（⚠️：这篇教程里面的第七步 Reboot with -uia_exclude_hs boot flag 的意思是将第三步添加的 `-uia_exclude_ss` 替换为 `-uia_exclude_hs`）。补丁制作完后也就不需要制作补丁时添加的 custom flags 和 添加的 DSDT 了，可以看看我的 config.plist，很干净。
 
 3 补丁制作完成后一定要好好保存，因为是针对自己电脑独有的文件，网上找不到第二份。
 
@@ -50,6 +50,8 @@ Wi-Fi&BT：BCM943602CS
 不要第一时间升级，新系统推送后过两周去社区看看问题反馈。决定升级前备份好数据，要做到即使升级失败也能会系统回滚到历史版本。
 
 ## USB port mapping
+
+⚠️ 只针对我自己的硬件情况。
 
 主板背部：
 
