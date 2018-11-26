@@ -45,13 +45,11 @@ USB 不正常工作的表现有：
 
 为了让 USB 和睡眠正常的工作需要制作 USB 补丁，macOS 10.14.1 下有 USB 端口限制，需要安装之前版本的 macOS 来制作 USB 补丁，以 macOS 10.13.6 下制作的安装补丁为例。
 
-#### 注意事项
-
-**移除 USB 端口限制**
+**1 移除 USB 端口限制**
 
 安装完 macOS 10.13.6 后需要移除 USB 端口限制，如果不移除你只能在 FB Patcher 上看到 15 个 USB 端口。移除方法请参考 [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/)。
 
-**使用 FB Patcher 制作 USB 补丁**
+**2 使用 FB Patcher 制作 USB 补丁**
 
 安装完上面的补丁后重启电脑应该可以看到所有的 USB 接口了，按照 [USB Port Patching](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-6-5.254559/) 的教程来制作属于你自己的 USB 补丁。
 
@@ -59,7 +57,7 @@ USB 不正常工作的表现有：
 
 ⚠️ 补丁制作完后也就不需要制作补丁时添加的 custom flags 和 DSDT 了，可以看看我的 config.plist，很干净。
 
-**保存好制作的补丁**
+**3 保存好制作的补丁**
 
 补丁制作完成后一定要好好保存，因为是针对自己电脑独有的文件，网上找不到第二份。
 

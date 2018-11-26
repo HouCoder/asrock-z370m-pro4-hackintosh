@@ -43,13 +43,11 @@ Here are some symptoms if USB does't work properly
 
 In order to make USB and sleep work properly we need to make a USB patch, macOS 10.14.1 has USB port limit, you need an eailer version of macOS, for example macOS 10.13.6.
 
-#### Installation Caveats
-
-**Remove USB port limit**
+**1 Remove USB port limit**
 
 After installing macOS 10.13.6 you need to remove USB port limit, if you don't you'll only see 15 USB ports on FB Patcher. Here is the guide - [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/).
 
-**Use FB Patcher to generate USB patch**
+**2 Use FB Patcher to generate USB patch**
 
 After USB port limit removal, reboot your computer, and follow this guide to make your own USB patch - [USB Port Patching](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-6-5.254559/).
 
@@ -57,7 +55,7 @@ After USB port limit removal, reboot your computer, and follow this guide to mak
 
 ⚠️ After generating the patch file, you can remove custom flags and DSDTs that you added during this process.
 
-**Store your USB patch file**
+**3 Store your USB patch file**
 
 Store your USB patch file in a secure place, it's your own patch file, you can't find it anywhere else.
 
