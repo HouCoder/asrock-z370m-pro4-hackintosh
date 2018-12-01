@@ -24,6 +24,20 @@ Wi-Fi 和蓝牙：BCM943602CS
 
 显卡、 Wi-Fi 和蓝牙芯片在 macOS 下插上就能用，不需要任何配置。
 
+## BIOS 设置
+
+Advanced \ Chipset Configuration → Vt-d : Disabled
+
+Advanced \ Super IO Configuration → Serial Port: Disabled
+
+Advanced \ USB Configuration → XHCI Hand-off : Enabled
+
+启用集显解决 Preview 不能预览 JPG 文件的问题，或者使用 [NoVPAJpeg](https://github.com/vulgo/NoVPAJpeg) 来修复。
+
+Advanced \ Chipset Configuration → Share Memory : 128MB
+
+Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
+
 ## 安装注意事项
 
 ### 音频
@@ -53,25 +67,22 @@ USB 不正常工作的表现有：
 
 安装完上面的补丁后重启电脑应该可以看到所有的 USB 接口了，按照 [USB Port Patching](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-6-5.254559/) 的教程来制作属于你自己的 USB 补丁。
 
-⚠️ "7. Reboot with -uia_exclude_hs boot flag" 的意思是将第三步添加的 `-uia_exclude_ss` 替换为 `-uia_exclude_hs`。
-
-⚠️ 补丁制作完后也就不需要制作补丁时添加的 custom flags 和 DSDT 了，可以看看我的 config.plist，很干净。
-
 **3 保存好制作的补丁**
 
 补丁制作完成后一定要好好保存，因为是针对自己电脑独有的文件，网上找不到第二份。
 
-## 完美么？
+## 已知的一些问题？
 
-暂未发现任何问题。
+### 睡眠后小概率出现蓝牙不可用的情况
+
+重启下蓝牙服务即可：`` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787)
+
 
 ## 升级系统怎么办？
 
 不要第一时间升级，新系统推送后过两周去社区看看问题反馈。决定升级前备份好系统，即使升级失败也能回滚到历史版本。
 
 ## USB 端口映射关系
-
-⚠️ 只针对我自己的硬件情况。
 
 HSXX 代表的是 USB 2.0，SSXX 代表的是 USB 3.0。
 

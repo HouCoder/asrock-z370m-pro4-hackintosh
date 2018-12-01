@@ -69,8 +69,6 @@ Don't upgraade immediately, wait for a couple of weeks after a new release and c
 
 ## USB port mapping
 
-⚠️ Just for my case
-
 HSXX means USB 2.0，SSXX means USB 3.0.
 
 Rear of motherboard:
