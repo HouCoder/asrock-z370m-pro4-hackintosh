@@ -46,7 +46,7 @@ Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
 ### 使用 USB 2.0 接口安装
 
-制作完 USB 安装盘后务必插在主板背部的 USB 2.0 的接口上安装，否则安装会报错 - [AppleUSBHostPort::disconnect: persistent enumeration failures](https://www.tonymacx86.com/threads/solved-appleusbhostport-disconnect-persistent-enumeration-failures-and-shows-stop-sign.265606/#post-1857030)
+制作完 USB 安装盘后务必插在主板背部的 USB 2.0 的接口上安装，否则安装会报错 - [AppleUSBHostPort::disconnect: persistent enumeration failures](https://www.tonymacx86.com/threads/solved-appleusbhostport-disconnect-persistent-enumeration-failures-and-shows-stop-sign.265606/#post-1857030)。
 
 ### 让 USB 顺利工作
 
@@ -71,11 +71,11 @@ USB 不正常工作的表现有：
 
 补丁制作完成后一定要好好保存，因为是针对自己电脑独有的文件，网上找不到第二份。
 
-## 已知的一些问题？
+## 已知的一些问题
 
 ### 睡眠后小概率出现蓝牙不可用的情况
 
-重启下蓝牙服务即可：`` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787)
+重启下蓝牙服务即可：`` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787)。
 
 
 ## 升级系统怎么办？
