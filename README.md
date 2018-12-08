@@ -24,6 +24,7 @@ Wi-Fi 和蓝牙：BCM943602CS
 
 显卡、 Wi-Fi 和蓝牙芯片在 macOS 下插上就能用，不需要任何配置。
 
+
 ## BIOS 设置
 
 Advanced \ Chipset Configuration → Vt-d : Disabled
@@ -95,6 +96,12 @@ HSXX 代表的是 USB 2.0，SSXX 代表的是 USB 3.0。
 机箱前置 USB（上）：HS09 SS06
 
 机箱前置 USB（下）：HS10 SS05
+
+## 升级记录
+
+| 版本 | 日期 | 备注 |
+|------------------------------|-----------|----------|
+| macOS Mojave 10.14.2 (18C54) | 2018.12.7 | 正常升级，无异常 |
 
 ## 参考链接：
 
