@@ -24,7 +24,6 @@ Wi-Fi 和蓝牙：BCM943602CS
 
 显卡、 Wi-Fi 和蓝牙芯片在 macOS 下插上就能用，不需要任何配置。
 
-
 ## BIOS 设置
 
 Advanced \ Chipset Configuration → Vt-d : Disabled
@@ -32,8 +31,6 @@ Advanced \ Chipset Configuration → Vt-d : Disabled
 Advanced \ Super IO Configuration → Serial Port: Disabled
 
 Advanced \ USB Configuration → XHCI Hand-off : Enabled
-
-启用集显解决 Preview 不能预览 JPG 文件的问题，或者使用 [NoVPAJpeg](https://github.com/vulgo/NoVPAJpeg) 来修复。
 
 Advanced \ Chipset Configuration → Share Memory : 128MB
 

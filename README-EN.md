@@ -22,6 +22,18 @@ SSD: Intel 760P 512G NVMe M.2
 
 Graphic card and Wi-Fi & BT card are natively supported by macOS, work out of box.
 
+## BIOS Settings
+
+Advanced \ Chipset Configuration → Vt-d : Disabled
+
+Advanced \ Super IO Configuration → Serial Port: Disabled
+
+Advanced \ USB Configuration → XHCI Hand-off : Enabled
+
+Advanced \ Chipset Configuration → Share Memory : 128MB
+
+Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
+
 ## Installation Caveats
 
 ### Audio
