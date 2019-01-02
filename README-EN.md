@@ -67,6 +67,10 @@ After the USB port limit removal, reboot your computer, and follow this guide to
 
 Store your USB patch file in a secure place, it's your own patch file, you can't find it anywhere else.
 
+### Intel Framebuffer Patching
+
+To make the integrated Intel UHD 630 work, please follow this tutorial to enable Intel Framebuffer Patching - [Intel Framebuffer patching using WhateverGreen](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/).
+
 ## Known issues?
 
 ### Bluetooth rarely stops working after sleep.

@@ -208,8 +208,6 @@
 		<string>LastBootedVolume</string>
 		<key>DisableCloverHotkeys</key>
 		<false/>
-		<key>Fast</key>
-		<false/>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>NeverDoRecovery</key>
@@ -224,6 +222,8 @@
 		<false/>
 		<key>StrictHibernate</key>
 		<false/>
+		<key>Timeout</key>
+		<integer>5</integer>
 	</dict>
 	<key>BootGraphics</key>
 	<dict>
@@ -524,6 +524,16 @@
 		</dict>
 		<key>LANInjection</key>
 		<false/>
+		<key>Properties</key>
+		<dict>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<dict>
+				<key>AAPL,ig-platform-id</key>
+				<data>
+				AwCSPg==
+				</data>
+			</dict>
+		</dict>
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
@@ -669,6 +679,8 @@
 			<string>Preboot</string>
 			<string>Recovery</string>
 		</array>
+		<key>Scan</key>
+		<true/>
 		<key>ScreenResolution</key>
 		<string>1920x1080</string>
 		<key>ShowOptimus</key>

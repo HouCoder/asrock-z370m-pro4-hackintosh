@@ -24,6 +24,7 @@ Wi-Fi 和蓝牙：BCM943602CS
 
 显卡、 Wi-Fi 和蓝牙芯片在 macOS 下插上就能用，不需要任何配置。
 
+
 ## BIOS 设置
 
 Advanced \ Chipset Configuration → Vt-d : Disabled
@@ -31,6 +32,8 @@ Advanced \ Chipset Configuration → Vt-d : Disabled
 Advanced \ Super IO Configuration → Serial Port: Disabled
 
 Advanced \ USB Configuration → XHCI Hand-off : Enabled
+
+启用集显解决 Preview 不能预览 JPG 文件的问题，或者使用 [NoVPAJpeg](https://github.com/vulgo/NoVPAJpeg) 来修复。
 
 Advanced \ Chipset Configuration → Share Memory : 128MB
 
@@ -69,22 +72,19 @@ USB 不正常工作的表现有：
 
 补丁制作完成后一定要好好保存，因为是针对自己电脑独有的文件，网上找不到第二份。
 
+### Intel Framebuffer Patching
+
+为了让集成的 Intel UHD 630 显卡正常的工作，需要做 Framebuffer Patching，具体步骤参考这个文档 - [Intel Framebuffer patching using WhateverGreen](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/)。
+
 ## 已知的一些问题
 
 ### 睡眠后小概率出现蓝牙不可用的情况
 
 重启下蓝牙服务即可：`` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787)。
 
-
 ## 升级系统怎么办？
 
 不要第一时间升级，新系统推送后过两周去社区看看问题反馈。决定升级前备份好系统，即使升级失败也能回滚到历史版本。
-
-## 升级记录
-
-| 版本 | 日期 | 备注 |
-|------------------------------|-----------|----------|
-| macOS Mojave 10.14.2 (18C54) | 2018.12.7 | 正常升级，无异常 |
 
 ## USB 端口映射关系
 
@@ -100,6 +100,14 @@ HSXX 代表的是 USB 2.0，SSXX 代表的是 USB 3.0。
 
 机箱前置 USB（下）：HS10 SS05
 
+## 升级记录
+
+| 版本 | 日期 | 备注 |
+|------------------------------|-----------|----------|
+| macOS Mojave 10.14.2 (18C54) | 2018.12.7 | 正常升级，无异常 |
+
 ## 参考链接：
 
 1. [如何正确的黑苹果](https://catty-house.blogspot.com/2018/10/hackintosh.html)
+1. [Kernel panic in Safari with UHD 630 + RX 570](https://www.tonymacx86.com/threads/kernel-panic-in-safari-with-uhd-630-rx-570.264222/)
+1. [正确驱动Intel显卡的Framebuffer](https://catty-house.blogspot.com/2018/10/intelframebuffer.html)
