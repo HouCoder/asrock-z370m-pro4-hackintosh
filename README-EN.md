@@ -71,11 +71,15 @@ Store your USB patch file in a secure place, it's your own patch file, you can't
 
 To make the integrated Intel UHD 630 work, please follow this tutorial to enable Intel Framebuffer Patching - [Intel Framebuffer patching using WhateverGreen](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/).
 
-## Known issues?
+## Known issues
 
 ### Bluetooth rarely stops working after sleep.
 
-Reboot bluetooth service with this command: `` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787).
+It happens on real Macs too, reboot bluetooth service with this command: `` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787).
+
+### No hardware acceleration on Final Cut Pro X
+
+I have no idea how to prefectly fix it, this post did a great explaination - [Asrock H370M-ITX/ac and getting RX560 or RX580 to work with Intel graphics for full hardware acceleration on Mojave](https://www.insanelymac.com/forum/topic/334913-success-asrock-h370m-itxac-and-getting-rx560-or-rx580-to-work-with-intel-graphics-for-full-hardware-acceleration-on-mojave-and-maybe-high-sierra-10136/), not a big deal for me, I rarely use Final Cut Pro X.
 
 ## How to upgrade macOS
 
@@ -100,3 +104,9 @@ Bluetooth: HS05
 Case front panle USB (up)：HS09 SS06
 
 Case front panle USB (down)：HS09 SS06
+
+## 参考链接：
+
+1. [如何正确的黑苹果](https://catty-house.blogspot.com/2018/10/hackintosh.html)
+1. [Kernel panic in Safari with UHD 630 + RX 570](https://www.tonymacx86.com/threads/kernel-panic-in-safari-with-uhd-630-rx-570.264222/)
+1. [正确驱动Intel显卡的Framebuffer](https://catty-house.blogspot.com/2018/10/intelframebuffer.html)
