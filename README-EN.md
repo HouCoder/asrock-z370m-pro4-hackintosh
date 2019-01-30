@@ -1,10 +1,6 @@
 # asrock-z370m-pro4-hackintosh
 
-This repo was made for my hardware specifications only, you can use it as your build reference, don't use it directly. Here are some software version infos:
-
-macOS version：10.14.1 (18B75)
-
-BIOS version：3.20
+This repo was made for my hardware specifications only, you can use it as a guide, don't use it directly in your build.
 
 ## Hardware Specifications
 
@@ -20,9 +16,11 @@ RAM: Micron 8G DDR4 2666 x 2
 
 SSD: Intel 760P 512G NVMe M.2
 
-Graphic card and Wi-Fi & BT card are natively supported by macOS, work out of box.
+Wi-Fi & BT card are natively supported by macOS, work out of box.
 
 ## BIOS Settings
+
+BIOS Version: 3.20
 
 Advanced \ Chipset Configuration → Vt-d : Disabled
 
@@ -55,6 +53,8 @@ Here are some issues you’re going to have if USB doesn't work properly:
 
 In order to make USB and sleep work properly you need to make a USB patch. macOS 10.14.1 has USB port limit, thus you need an earlier version of macOS, for example macOS 10.13.6.
 
+⚠️ When I was building mine Hackintosh, there was no USB ports limit patch for macOS 10.14.1, thus I had to install an earlier version of macOS. If you can find the patch for your macOS on this page - [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/), then good luck, you just saved a lot of time!
+
 **1 Remove USB port limit**
 
 After installing macOS 10.13.6 you need to remove USB port limit. Otherwise, you can only see 15 USB ports on FB Patcher. Here is the removal guide - [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/).
@@ -70,6 +70,8 @@ Store your USB patch file in a secure place, it's your own patch file, you can't
 ### Intel Framebuffer Patching
 
 To make the integrated Intel UHD 630 work, please follow this tutorial to enable Intel Framebuffer Patching - [Intel Framebuffer patching using WhateverGreen](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/).
+
+That tutorial is long and boring, for 8th Gen CPU users, just read this - [corpnewt/Hackintosh-Guide](https://github.com/corpnewt/Hackintosh-Guide/blob/master/config.plist-per-hardware/coffee-lake.md#properties).
 
 ## Known issues
 

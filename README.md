@@ -2,11 +2,7 @@
 
 [English version](./README-EN.md)
 
-该项目只针对我的配置，仅供参考，不要盲目使用。一些软件版本信息：
-
-macOS version：10.14.1 (18B75)
-
-BIOS version：3.20
+该项目只针对我的配置，仅供参考，不要盲目使用。
 
 ## 硬件
 
@@ -22,10 +18,11 @@ Wi-Fi 和蓝牙：BCM943602CS
 
 硬盘：Intel 760P 512G NVMe M.2
 
-显卡、 Wi-Fi 和蓝牙芯片在 macOS 下插上就能用，不需要任何配置。
-
+Wi-Fi 和蓝牙芯片在 macOS 下插上就能用，不需要任何配置。
 
 ## BIOS 设置
+
+BIOS 版本：3.20
 
 Advanced \ Chipset Configuration → Vt-d : Disabled
 
@@ -58,6 +55,8 @@ USB 不正常工作的表现有：
 
 为了让 USB 和睡眠正常的工作需要制作 USB 补丁，macOS 10.14.1 下有 USB 端口限制，需要安装之前版本的 macOS 来制作 USB 补丁，以 macOS 10.13.6 下制作的安装补丁为例。
 
+⚠️  我安装的时候网上还没出现针对 macOS 10.14.1 的移除 USB 端口限制补丁，安装旧版本实属无奈之举。如果你可以在 [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/) 中找到与你安装的 macOS 版本对应的解除 USB 限制补丁的话就不需要安装老版本的 macOS 了。
+
 **1 移除 USB 端口限制**
 
 安装完 macOS 10.13.6 后需要移除 USB 端口限制，如果不移除你只能在 FB Patcher 上看到 15 个 USB 端口。移除方法请参考 [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/)。
@@ -73,6 +72,8 @@ USB 不正常工作的表现有：
 ### Intel Framebuffer Patching
 
 为了让集成的 Intel UHD 630 显卡正常的工作，需要做 Framebuffer Patching，具体步骤参考这个文档 - [Intel Framebuffer patching using WhateverGreen](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/)。
+
+文章很长，很难懂，8 代 CPU 直接看这里即可：[corpnewt/Hackintosh-Guide](https://github.com/corpnewt/Hackintosh-Guide/blob/master/config.plist-per-hardware/coffee-lake.md#properties)。
 
 ## 已知的一些问题
 
