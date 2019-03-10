@@ -111,6 +111,20 @@ HSXX 代表的是 USB 2.0，SSXX 代表的是 USB 3.0。
 | macOS Mojave 10.14.3 (18D42)  | 2019.1.23 | 正常升级，无异常 |
 | macOS Mojave 10.14.3 (18D109) | 2019.2.11 | 正常升级，无异常 |
 
+## 跑分测试
+
+### Geekbench CPU
+
+<img src="./images/geekbench-cpu.png" alt="geekbench-cpu-score" width="400px">
+
+### Geekbench GPU
+
+<img src="./images/geekbench-gpu-opengl.png" alt="geekbench-gpu-opengl-score" width="400px">
+
+### Cinebench
+
+<img src="./images/cinebench.png" alt="cinebench-score">
+
 ## 参考链接：
 
 1. [如何正确的黑苹果](https://catty-house.blogspot.com/2018/10/hackintosh.html)
