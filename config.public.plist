@@ -916,7 +916,9 @@
 		<key>MLB</key>
 		<string>C02032109R5DC771H</string>
 		<key>ROM</key>
-		<string>UseMacAddr0</string>
+		<data>
+		6J8sdOAH
+		</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
@@ -1042,7 +1044,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02724303J9J0DXUE</string>
+		<string>C02724404QXJ0DXFB</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -1072,9 +1074,9 @@
 		<key>ProductName</key>
 		<string>iMac18,2</string>
 		<key>SerialNumber</key>
-		<string>C02TV0JAJ1G5</string>
+		<string>C02TVQZSJ1G5</string>
 		<key>SmUUID</key>
-		<string>42AECE27-98D1-4060-BC9F-F6B7E0414203</string>
+		<string>6A5825CE-DE08-4167-93EE-A52CE674E007</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
