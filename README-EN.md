@@ -123,7 +123,7 @@ Case front panle USB (down)：HS09 SS06
 
 <img src="./images/cinebench.png" alt="cinebench-score">
 
-## Links:
+## Links
 
 1. [如何正确的黑苹果](https://catty-house.blogspot.com/2018/10/hackintosh.html)
 1. [Kernel panic in Safari with UHD 630 + RX 570](https://www.tonymacx86.com/threads/kernel-panic-in-safari-with-uhd-630-rx-570.264222/)
