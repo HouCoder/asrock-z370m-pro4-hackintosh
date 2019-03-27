@@ -94,7 +94,7 @@ Don't upgrade immediately, wait for a couple of weeks after a new release and ch
 | macOS Mojave 10.14.2 (18C54)  | 2018.12.7 | Normal upgrade, no issue |
 | macOS Mojave 10.14.3 (18D42)  | 2019.1.23 | Normal upgrade, no issue |
 | macOS Mojave 10.14.3 (18D109) | 2019.2.11 | Normal upgrade, no issue |
-| macOS Mojave 10.14.4 (18D109) | 2019.3.26 | Normal upgrade, no issue |
+| macOS Mojave 10.14.4 (18E226) | 2019.3.26 | Normal upgrade, no issue |
 
 ## USB port mapping
 
