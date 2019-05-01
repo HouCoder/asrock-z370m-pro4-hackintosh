@@ -6,17 +6,23 @@
 
 ## 硬件
 
-CPU：Intel i5 8400
+CPU：英特尔 i5 8400
 
-主板：[Asrock z370m Pro4](https://www.asrock.com/MB/Intel/Z370M%20Pro4/index.asp)
+主板：[华擎 Z370M Pro4](https://www.asrock.com/MB/Intel/Z370M%20Pro4/index.asp)
 
-显卡：[蓝宝石RX560 4G D5 白金版 OC (75W)](http://www.sapphiretech.com/productdetial.asp?pid=C12A4F7E-B791-4DDB-8D32-47BB6ACA68BD&lang=chs)
+显卡：蓝宝石RX560 4G D5 白金版 OC (75W)
 
 Wi-Fi 和蓝牙：BCM943602CS
 
-内存：Micron 8G DDR4 2666 x 2
+内存：英睿达 8G DDR4 2666 x 2
 
-硬盘：Intel 760P 512G NVMe M.2
+硬盘 0：英特尔 760P 512G NVMe M.2 （最新的 macOS）
+
+硬盘 1：惠普 EX900 250G （最新的 macOS）
+
+硬盘 2：英睿达 1100 256G （Windows 10）
+
+硬盘 3：东芝 1TB HDD （TimeMachine 备份）
 
 Wi-Fi 和蓝牙芯片在 macOS 下插上就能用，不需要任何配置。
 
@@ -79,7 +85,9 @@ USB 不正常工作的表现有：
 
 ### 睡眠后小概率出现蓝牙不可用的情况
 
-这个问题在白苹上也有，遇到这种问题重启下蓝牙服务即可：`` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787)。
+这个问题在白苹果上也有，对于我来说导致这个问题的原因是睡眠后电脑尝试使用蓝牙连接 Apple Watch 自动解锁可能会出现这个问题，没有 Apple Watch 的话应该不会出现这个问题的。
+
+遇到这种问题重启下蓝牙服务即可：`` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787)。
 
 ### Final Cut Pro X 无法 GPU 加速
 
@@ -87,7 +95,14 @@ USB 不正常工作的表现有：
 
 ## 升级系统怎么办？
 
+❗️ 升级前备份系统，最好做一个可启动的备份。
+
+❗️ 升级前备份系统，最好做一个可启动的备份。
+
+❗️ 升级前备份系统，最好做一个可启动的备份。
+
 不要第一时间升级，新系统推送后过两周去社区看看问题反馈。决定升级前备份好系统，即使升级失败也能回滚到历史版本。
+
 
 ## USB 端口映射关系
 
