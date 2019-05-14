@@ -20,9 +20,7 @@ Wi-Fi 和蓝牙：BCM943602CS
 
 硬盘 1：惠普 EX900 250G （最新的 macOS）
 
-硬盘 2：英睿达 1100 256G （Windows 10）
-
-硬盘 3：东芝 1TB HDD （TimeMachine 备份）
+硬盘 2：东芝 1TB HDD （TimeMachine 备份）
 
 显示器 0：戴尔 U2718QM
 

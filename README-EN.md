@@ -8,13 +8,21 @@ CPU: Intel i5 8400
 
 Motherboard: [Asrock z370m Pro4](https://www.asrock.com/MB/Intel/Z370M%20Pro4/index.asp)
 
-Graphic Card: [SAPPHIRE PULSE Radeon™ RX 560 4GD5](http://www.sapphiretech.com/productdetial.asp?pid=501EC1E9-91FB-41CD-BD65-31CEBEBCE178&lang=eng)
+Graphic Card: SAPPHIRE PULSE Radeon™ RX 560 4GD5
 
 Wi-Fi & BT: BCM943602CS
 
 RAM: Micron 8G DDR4 2666 x 2
 
-SSD: Intel 760P 512G NVMe M.2
+SSD0: Intel 760P 512G NVMe M.2 (The latest macOS)
+
+SSD1: HP EX900 250G (The latest macOS)
+
+HDD0: Toshiba 1TB HDD (TimeMachine)
+
+Display0: Dell U2718QM
+
+Display1: Dell U2414H
 
 Wi-Fi & BT card are natively supported by macOS, work out of box.
 
@@ -77,7 +85,7 @@ That tutorial is long and boring, for 8th Gen CPU users, just read this - [corpn
 
 ### Bluetooth rarely stops working after sleep.
 
-It happens on real Macs too, reboot bluetooth service with this command: `` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787).
+It happens on real Macs too, in my case it was caused by my Apple Watch trying to unlock my Hackintosh after sleep, reboot bluetooth service with this command: `` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787).
 
 ### No hardware acceleration on Final Cut Pro X
 
@@ -85,7 +93,11 @@ I have no idea how to prefectly fix it, this post did a great explaination - [As
 
 ## How to upgrade macOS
 
-Don't upgrade immediately, wait for a couple of weeks after a new release and check compatibility issues on tonymacx86. Always backup your system before upgrading.
+❗️ Backup your system, suggest to use [Carbon Copy Cloner](https://bombich.com/) make a bootable backup, you can  boot from your backup and restore the whole system if update fails.
+
+❗ Use [Kext Updater](https://bitbucket.org/profdrluigi/kextupdater/downloads/) to update kexts and Clover.
+
+❗ Be cautious, check online forums for potential issues before updating.
 
 ## System upgrade history
 
