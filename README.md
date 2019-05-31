@@ -10,11 +10,11 @@ CPU：英特尔 i5 8400
 
 主板：[华擎 Z370M Pro4](https://www.asrock.com/MB/Intel/Z370M%20Pro4/index.asp)
 
-显卡：蓝宝石RX560 4G D5 白金版 OC (75W)
+显卡：蓝宝石 RX560 4G D5 白金版 OC (75W)
 
 Wi-Fi 和蓝牙：BCM943602CS
 
-内存：英睿达 8G DDR4 2666 x 2
+内存：英睿达 8G DDR4 2666 x 4
 
 硬盘 0：英特尔 760P 512G NVMe M.2 （最新的 macOS）
 

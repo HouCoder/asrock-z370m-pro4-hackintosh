@@ -12,7 +12,7 @@ Graphic Card: SAPPHIRE PULSE Radeon™ RX 560 4GD5
 
 Wi-Fi & BT: BCM943602CS
 
-RAM: Micron 8G DDR4 2666 x 2
+RAM: Micron 8G DDR4 2666 x 4
 
 SSD0: Intel 760P 512G NVMe M.2 (The latest macOS)
 
