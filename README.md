@@ -101,7 +101,7 @@ USB 不正常工作的表现有：
 
 ❗️ 升级前升级必要的 kexts 和 Clover，推荐使用 [Kext Updater](https://bitbucket.org/profdrluigi/kextupdater/downloads/) 来批量升级。
 
-❗️ 不要第一时间升级，新系统推送后过两周去社区看看问题反馈。决定升级前备份好系统，即使升级失败也能回滚到历史版本。
+❗️ 不要第一时间升级，新系统推送后去社区先看看问题反馈。
 
 
 ## USB 端口映射关系
