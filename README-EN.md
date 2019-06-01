@@ -6,7 +6,7 @@ This repo was made for my hardware specifications only, you can use it as a guid
 
 CPU: Intel i5 8400
 
-Motherboard: [Asrock z370m Pro4](https://www.asrock.com/MB/Intel/Z370M%20Pro4/index.asp)
+Motherboard: [Asrock Z370M Pro4](https://www.asrock.com/MB/Intel/Z370M%20Pro4/index.asp)
 
 Graphic Card: SAPPHIRE PULSE Radeon™ RX 560 4GD5
 
@@ -61,7 +61,7 @@ Here are some issues you’re going to have if USB doesn't work properly:
 
 In order to make USB and sleep work properly you need to make a USB patch. macOS 10.14.1 has USB port limit, thus you need an earlier version of macOS, for example macOS 10.13.6.
 
-⚠️ When I was building mine Hackintosh, there was no USB ports limit patch for macOS 10.14.1, thus I had to install an earlier version of macOS. If you can find the patch for your macOS on this page - [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/), lucky for you, you just saved a lot of time!
+⚠️ When I was building this Hackintosh, there was no USB ports limit patch for macOS 10.14.1, thus I had to install an earlier version of macOS. If you can find the patch for your macOS on this page - [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/), lucky for you, you just saved a lot of time!
 
 **1 Remove USB port limit**
 
