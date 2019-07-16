@@ -87,10 +87,6 @@ That tutorial is long and boring, for 8th Gen CPU users, just read this - [corpn
 
 It happens on real Macs too, in my case it was caused by my Apple Watch trying to unlock my Hackintosh after sleep, reboot bluetooth service with this command: `` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787).
 
-### No hardware acceleration on Final Cut Pro X
-
-I have no idea how to prefectly fix it, this post did a great explaination - [Asrock H370M-ITX/ac and getting RX560 or RX580 to work with Intel graphics for full hardware acceleration on Mojave](https://www.insanelymac.com/forum/topic/334913-success-asrock-h370m-itxac-and-getting-rx560-or-rx580-to-work-with-intel-graphics-for-full-hardware-acceleration-on-mojave-and-maybe-high-sierra-10136/), not a big deal for me, I rarely use Final Cut Pro X.
-
 ## How to upgrade macOS
 
 ❗️ Backup your system, suggest to use [Carbon Copy Cloner](https://bombich.com/) make a bootable backup, you can  boot from your backup and restore the whole system if update fails.

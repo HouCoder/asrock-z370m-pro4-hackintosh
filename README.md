@@ -91,10 +91,6 @@ USB 不正常工作的表现有：
 
 遇到这种问题重启下蓝牙服务即可：`` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787)。
 
-### Final Cut Pro X 无法 GPU 加速
-
-这个问题暂时还没找到完美的解决办法，这篇文章做了比较好的介绍 - [Asrock H370M-ITX/ac and getting RX560 or RX580 to work with Intel graphics for full hardware acceleration on Mojave](https://www.insanelymac.com/forum/topic/334913-success-asrock-h370m-itxac-and-getting-rx560-or-rx580-to-work-with-intel-graphics-for-full-hardware-acceleration-on-mojave-and-maybe-high-sierra-10136/)，不过对我来说影响不大，我平时很少用 Final Cut Pro X。
-
 ## 升级系统怎么办？
 
 ❗️ 升级前备份系统，最好做一个可启动的备份，推荐使用 [Carbon Copy Cloner](https://bombich.com/)，失败后从备份启动然后再用 Carbon Copy Cloner 把备份拷贝到主硬盘上。
