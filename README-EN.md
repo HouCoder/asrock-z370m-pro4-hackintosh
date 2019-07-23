@@ -104,6 +104,7 @@ It happens on real Macs too, in my case it was caused by my Apple Watch trying t
 | macOS Mojave 10.14.3 (18D109) | 2019.2.11 | Normal upgrade, no issue |
 | macOS Mojave 10.14.4 (18E226) | 2019.3.26 | Normal upgrade, no issue |
 | macOS Mojave 10.14.5 (18F132) | 2019.5.14 | Normal upgrade, no issue |
+| macOS Mojave 10.14.6 (18G84)  | 2019.7.23 | Normal upgrade, no issue |
 
 ## USB port mapping
 
