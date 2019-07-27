@@ -42,7 +42,37 @@ Advanced \ Chipset Configuration → Share Memory : 128MB
 
 Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
+## UEFI 驱动说明
+
+| 文件 | 备注 | 官网/文档 |
+|------------------|---------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| ApfsDriverLoader | 自动加载 APFS 驱动 | [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg) |
+| AptioMemoryFix | 用来修复一些与 macOS 的启动有关的 UEFI Aptio 问题 | [AptioFixPkg](https://github.com/acidanthera/AptioFixPkg) |
+| FSInject | 负责加载 kexts 目录下的 kext | [FSInject](https://sourceforge.net/p/cloverefiboot/code/HEAD/tree/FSInject/) |
+| SMCHelper | 当 NVRAM 出错可以恢复上次正确启动的 NVRAM |  |
+| VBoxHfs | 提供 HFS+ 磁盘格式支持 | [VBoxHfs.inf](https://sourceforge.net/p/cloverefiboot/code/HEAD/tree/FileSystems/VBoxFsDxe/VBoxHfs.inf) |
+
+## Kext 说明
+
+| 文件 | 备注 | 官网/文档 |
+|--------------------------------|---------------------------------------------------------|---------------------------------------------------------------------------------------|
+| AppleALC.kext | 为非官方支持的声卡提供支持 | [AppleALC](https://github.com/acidanthera/AppleALC) |
+| FakeSMC.kext 和 FakeSMC_*.kext | 获取硬件传感器信息 | [os-x-fakesmc-kozlek](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/src/master/) |
+| IntelMausiEthernet.kext | 板载 Intel 有线网卡驱动 | [os-x-intel-network](https://bitbucket.org/RehabMan/os-x-intel-network/src/master/) |
+| Lilu.kext | 给内核扩展/进程打补丁 | [Lilu](https://github.com/acidanthera/Lilu) |
+| USBPorts.kext | ☠️我的 USB 映射表，你不要用 |  |
+| WhateverGreen.kext | 为主流显卡提供支持 | [WhateverGreen](https://github.com/acidanthera/WhateverGreen) |
+| XHCI-unsupported.kext | 对于 macOS 原生不支持的 Intel xHCI 控制器需要这个注入器 | [https://github.com/RehabMan/OS-X-USB-Inject-All](OS-X-USB-Inject-All) |
+
 ## 安装注意事项
+
+### FileVault
+
+没有启用 FileVault 这个功能，更多的功能等于更多的不确定性。
+
+### 节能选项
+
+禁用 Power Nap，它会导致系统在睡眠状态下自动唤醒。
 
 ### 音频
 
@@ -83,6 +113,20 @@ USB 不正常工作的表现有：
 
 文章很长，很难懂，8 代 CPU 直接看这里即可：[corpnewt/Hackintosh-Guide](https://github.com/corpnewt/Hackintosh-Guide/blob/master/config.plist-per-hardware/coffee-lake.md#properties)。
 
+### 数据备份
+
+即使黑苹果很成熟了但仍具有不确定性，强烈建议准备第二块 HDD 开启 Time Machine 备份。
+
+## 正常的功能
+
+- [x] 系统睡眠与唤醒
+- [x] 多显示器支持
+- [x] 蓝牙、Wi-Fi 和有线网络
+- [x] iMessage、Handoff、Continuity、FaceTime 和 AirDrop
+- [x] 音频输入和输出
+- [x] Headless 模式下的 Intel iGPU
+- [x] Time Machine
+
 ## 已知的一些问题
 
 ### 睡眠后小概率出现蓝牙不可用的情况
@@ -98,7 +142,6 @@ USB 不正常工作的表现有：
 ❗️ 升级前升级必要的 kexts 和 Clover，推荐使用 [Kext Updater](https://bitbucket.org/profdrluigi/kextupdater/downloads/) 来批量升级。
 
 ❗️ 不要第一时间升级，新系统推送后去社区先看看问题反馈。
-
 
 ## USB 端口映射关系
 
@@ -141,6 +184,4 @@ HSXX 代表的是 USB 2.0，SSXX 代表的是 USB 3.0。
 
 ## 参考链接
 
-1. [如何正确的黑苹果](https://catty-house.blogspot.com/2018/10/hackintosh.html)
-1. [Kernel panic in Safari with UHD 630 + RX 570](https://www.tonymacx86.com/threads/kernel-panic-in-safari-with-uhd-630-rx-570.264222/)
-1. [正确驱动Intel显卡的Framebuffer](https://catty-house.blogspot.com/2018/10/intelframebuffer.html)
+1. [如何正确的黑苹果](https://web.archive.org/web/20190727085623/https://www.zmczx.com/t/76)，原始作者是 [cattyhouse](https://github.com/cattyhouse)，原始博文被删除了，这是我用 archive.org 保存的一份转载，很棒的教程。
