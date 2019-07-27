@@ -135,6 +135,10 @@ USB 不正常工作的表现有：
 
 遇到这种问题重启下蓝牙服务即可：`` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787)。
 
+### Wireless Diagnostics 诊断无线网络的时候会出现 kernel panic
+
+路由器故障的时候偶然发现，看 log 也没有什么头绪，日常使用注意即可，[wireless-diagnostics](./kernel-panics/wireless-diagnostics.log)。
+
 ## 升级系统怎么办？
 
 ❗️ 升级前备份系统，最好做一个可启动的备份，推荐使用 [Carbon Copy Cloner](https://bombich.com/)，失败后从备份启动然后再用 Carbon Copy Cloner 把备份拷贝到主硬盘上。

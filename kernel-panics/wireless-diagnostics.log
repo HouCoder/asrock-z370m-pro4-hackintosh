@@ -1,0 +1,208 @@
+Anonymous UUID:       BCFBBEFB-EEA0-11D9-50F7-71244770088D
+
+Sat Jul 27 17:24:36 2019
+
+*** Panic Report ***
+panic(cpu 1 caller 0xffffff8013cdaadd): Kernel trap at 0xffffff8014225968, type 14=page fault, registers:
+CR0: 0x0000000080010033, CR2: 0x0000000000000008, CR3: 0x0000000698b5d05f, CR4: 0x00000000003626e0
+RAX: 0x0000000000000000, RBX: 0x0000000000000001, RCX: 0xffffff83be0d3a3c, RDX: 0x0000000000000001
+RSP: 0xffffff83be0d3930, RBP: 0xffffff83be0d3980, RSI: 0xffffff80618662c0, RDI: 0xffffff8062177000
+R8:  0x0000000000000000, R9:  0x000000000000002f, R10: 0xffffff80144a3a20, R11: 0xffffff806805860c
+R12: 0x504d537448697374, R13: 0xffffff80618662c0, R14: 0xffffff80618662d8, R15: 0xffffff8062177000
+RFL: 0x0000000000010246, RIP: 0xffffff8014225968, CS:  0x0000000000000008, SS:  0x0000000000000010
+Fault CR2: 0x0000000000000008, Error code: 0x0000000000000000, Fault CPU: 0x1, PL: 0, VF: 0
+
+Backtrace (CPU 1), Frame : Return Address
+0xffffff83be0d3400 : 0xffffff8013bad6ed
+0xffffff83be0d3450 : 0xffffff8013ce9185
+0xffffff83be0d3490 : 0xffffff8013cda8ba
+0xffffff83be0d3500 : 0xffffff8013b5ab40
+0xffffff83be0d3520 : 0xffffff8013bad107
+0xffffff83be0d3640 : 0xffffff8013bacf53
+0xffffff83be0d36b0 : 0xffffff8013cdaadd
+0xffffff83be0d3820 : 0xffffff8013b5ab40
+0xffffff83be0d3840 : 0xffffff8014225968
+0xffffff83be0d3980 : 0xffffff7f953097a6
+0xffffff83be0d3a00 : 0xffffff7f9530a4a6
+0xffffff83be0d3aa0 : 0xffffff7f95309ec7
+0xffffff83be0d3ae0 : 0xffffff80142850a8
+0xffffff83be0d3b30 : 0xffffff801428e552
+0xffffff83be0d3c70 : 0xffffff8013c955c6
+0xffffff83be0d3d80 : 0xffffff8013bb2f2c
+0xffffff83be0d3dd0 : 0xffffff8013b8dca1
+0xffffff83be0d3e50 : 0xffffff8013ba23be
+0xffffff83be0d3ef0 : 0xffffff8013cc07e7
+0xffffff83be0d3fa0 : 0xffffff8013b5b326
+      Kernel Extensions in backtrace:
+         com.apple.iokit.IOReportFamily(47.0)[0BC9F93B-456A-3D97-BE4C-69DCBB5E8A3C]@0xffffff7f95309000->0xffffff7f9530ffff
+
+BSD process name corresponding to current thread: pmset
+
+Mac OS version:
+18G84
+
+Kernel version:
+Darwin Kernel Version 18.7.0: Thu Jun 20 18:42:21 PDT 2019; root:xnu-4903.270.47~4/RELEASE_X86_64
+Kernel UUID: 982F17B3-0252-37FB-9869-88B3B1C77335
+Kernel slide:     0x0000000013800000
+Kernel text base: 0xffffff8013a00000
+__HIB  text base: 0xffffff8013900000
+System model name: iMac18,2 (Mac-77F17D7DA9285301)
+
+System uptime in nanoseconds: 9065662553123
+last loaded kext at 5516478956372: com.apple.driver.AppleUSBAudio	315.6 (addr 0xffffff7f9915f000, size 413696)
+last unloaded kext at 5699281182806: com.apple.driver.usb.IOUSBHostHIDDevice	1.2 (addr 0xffffff7f94b48000, size 49152)
+loaded kexts:
+org.virtualbox.kext.VBoxNetAdp	6.0.4
+org.virtualbox.kext.VBoxNetFlt	6.0.4
+org.virtualbox.kext.VBoxUSB	6.0.4
+org.virtualbox.kext.VBoxDrv	6.0.4
+com.zerotier.tap	1.0
+com.insanelymac.IntelMausiEthernet	2.5.0d0
+org.hwsensors.driver.GPUSensors	1800
+org.hwsensors.driver.CPUSensors	1800
+as.vit9696.AppleALC	1.3.9
+as.vit9696.WhateverGreen	1.3.0
+as.vit9696.Lilu	1.3.7
+org.netkas.driver.FakeSMC	1800
+com.apple.filesystems.msdosfs	1.10
+com.apple.filesystems.smbfs	3.3.2
+com.apple.driver.AudioAUUC	1.70
+com.apple.driver.AppleUpstreamUserClient	3.6.5
+com.apple.driver.AppleMCCSControl	1.5.9
+com.apple.kext.AMDFramebuffer	2.1.1
+com.apple.fileutil	20.036.15
+com.apple.filesystems.autofs	3.0
+com.apple.driver.AGPM	110.25.11
+com.apple.driver.ApplePlatformEnabler	2.7.0d0
+com.apple.driver.X86PlatformShim	1.0.0
+com.apple.driver.AppleHDA	282.54
+com.apple.kext.AMDRadeonX4000	2.1.1
+com.apple.AGDCPluginDisplayMetrics	3.50.12
+com.apple.driver.AppleHV	1
+com.apple.iokit.IOUserEthernet	1.0.1
+com.apple.iokit.IOBluetoothSerialManager	6.0.14d3
+com.apple.kext.AMD9500Controller	2.1.1
+com.apple.driver.pmtelemetry	1
+com.apple.Dont_Steal_Mac_OS_X	7.0.0
+com.apple.driver.AppleIntelKBLGraphics	12.1.0
+com.apple.driver.AppleIntelSlowAdaptiveClocking	4.0.0
+com.apple.driver.AppleIntelCFLGraphicsFramebuffer	12.1.0
+com.apple.driver.AppleOSXWatchdog	1
+com.apple.driver.AppleIntelPCHPMC	2.0.1
+com.apple.iokit.BroadcomBluetooth20703USBTransport	6.0.14d3
+com.apple.driver.AppleGFXHDA	100.1.414
+com.apple.driver.AppleVirtIO	2.1.3
+com.apple.filesystems.hfs.kext	407.200.4
+com.apple.AppleFSCompression.AppleFSCompressionTypeDataless	1.0.0d1
+com.apple.BootCache	40
+com.apple.AppleFSCompression.AppleFSCompressionTypeZlib	1.0.0
+com.apple.AppleSystemPolicy	1.0
+com.apple.filesystems.apfs	945.275.7
+com.apple.driver.AirPort.BrcmNIC	1400.1.1
+com.apple.driver.AppleAHCIPort	329.260.5
+com.apple.private.KextAudit	1.0
+com.apple.driver.AppleACPIButtons	6.1
+com.apple.driver.AppleRTC	2.0
+com.apple.driver.AppleHPET	1.8
+com.apple.driver.AppleSMBIOS	2.1
+com.apple.driver.AppleAPIC	1.7
+com.apple.nke.applicationfirewall	201
+com.apple.security.TMSafetyNet	8
+com.apple.driver.AppleSMBusController	1.0.18d1
+com.apple.iokit.IOSMBusFamily	1.1
+com.apple.iokit.IOUSBUserClient	900.4.2
+com.apple.kext.triggers	1.0
+com.apple.driver.DspFuncLib	282.54
+com.apple.kext.OSvKernDSPLib	528
+com.apple.kext.AMDRadeonX4000HWLibs	1.0
+com.apple.kext.AMDRadeonX4000HWServices	2.1.1
+com.apple.iokit.IOAVBFamily	760.6
+com.apple.plugin.IOgPTPPlugin	740.2
+com.apple.iokit.IOEthernetAVBController	1.1.0
+com.apple.iokit.IOSkywalkFamily	1
+com.apple.driver.AppleSSE	1.0
+com.apple.AppleGPUWrangler	3.50.12
+com.apple.kext.AMDSupport	2.1.1
+com.apple.iokit.IOSlowAdaptiveClockingFamily	1.0.0
+com.apple.driver.X86PlatformPlugin	1.0.0
+com.apple.AppleGraphicsDeviceControl	3.50.12
+com.apple.iokit.IOAcceleratorFamily2	404.14
+com.apple.iokit.IOSurface	255.6.1
+com.apple.driver.AppleHDAController	282.54
+com.apple.iokit.IOHDAFamily	282.54
+com.apple.driver.IOPlatformPluginFamily	6.0.0d8
+com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport	6.0.14d3
+com.apple.iokit.IOBluetoothHostControllerUSBTransport	6.0.14d3
+com.apple.iokit.IOBluetoothHostControllerTransport	6.0.14d3
+com.apple.iokit.IOBluetoothFamily	6.0.14d3
+com.apple.iokit.IONDRVSupport	530.51
+com.apple.iokit.IOGraphicsFamily	530.66
+com.apple.iokit.IOUSBHIDDriver	900.4.2
+com.apple.iokit.IOAHCIBlockStorage	301.270.1
+com.apple.iokit.IOAudioFamily	206.5
+com.apple.vecLib.kext	1.2.0
+com.apple.driver.usb.networking	5.0.0
+com.apple.driver.usb.AppleUSBHostCompositeDevice	1.2
+com.apple.iokit.IOSerialFamily	11
+com.apple.filesystems.hfs.encodings.kext	1
+com.apple.driver.AppleUSBHostMergeProperties	1.2
+com.apple.driver.usb.AppleUSBHostPacketFilter	1.0
+com.apple.iokit.IOUSBFamily	900.4.2
+com.apple.iokit.IO80211Family	1200.12.2
+com.apple.driver.mDNSOffloadUserClient	1.0.1b8
+com.apple.driver.corecapture	1.0.4
+com.apple.iokit.IONVMeFamily	2.1.0
+com.apple.iokit.IOAHCIFamily	288
+com.apple.driver.usb.AppleUSBXHCIPCI	1.2
+com.apple.driver.usb.AppleUSBXHCI	1.2
+com.apple.driver.AppleEFINVRAM	2.1
+com.apple.driver.AppleEFIRuntime	2.1
+com.apple.iokit.IOHIDFamily	2.0.0
+com.apple.security.quarantine	3
+com.apple.security.sandbox	300.0
+com.apple.kext.AppleMatch	1.0.0d1
+com.apple.driver.DiskImages	493.0.0
+com.apple.driver.AppleFDEKeyStore	28.30
+com.apple.driver.AppleEffaceableStorage	1.0
+com.apple.driver.AppleKeyStore	2
+com.apple.driver.AppleUSBTDM	456.260.3
+com.apple.driver.AppleMobileFileIntegrity	1.0.5
+com.apple.iokit.IOUSBMassStorageDriver	145.200.2
+com.apple.iokit.IOSCSIBlockCommandsDevice	408.250.3
+com.apple.iokit.IOSCSIArchitectureModelFamily	408.250.3
+com.apple.iokit.IOStorageFamily	2.1
+com.apple.kext.CoreTrust	1
+com.apple.driver.AppleCredentialManager	1.0
+com.apple.driver.KernelRelayHost	1
+com.apple.iokit.IOUSBHostFamily	1.2
+com.apple.driver.usb.AppleUSBCommon	1.0
+com.apple.driver.AppleBusPowerController	1.0
+com.apple.driver.AppleSEPManager	1.0.1
+com.apple.driver.IOSlaveProcessor	1
+com.apple.iokit.IOReportFamily	47
+com.apple.iokit.IOTimeSyncFamily	740.2
+com.apple.iokit.IONetworkingFamily	3.4
+com.apple.driver.AppleACPIPlatform	6.1
+com.apple.driver.AppleSMC	3.1.9
+com.apple.iokit.IOPCIFamily	2.9
+com.apple.iokit.IOACPIFamily	1.4
+com.apple.kec.pthread	1
+com.apple.kec.Libm	1
+com.apple.kec.corecrypto	1.0
+
+EOF
+Model: iMac18,2, BootROM 172.0.0.0.0, 6 processors, Intel Core i5, 2.81 GHz, 32 GB, SMC 2.40f0
+Graphics: Radeon RX 560, Radeon RX 560, spdisplays_pcie_device, 4 GB
+Memory Module: BANK 0/DIMM0, 8 GB, DDR4, 2667 MHz, Crucial Technology, CT8G4DFS8266.M8FD
+Memory Module: BANK 1/DIMM0, 8 GB, DDR4, 2667 MHz, Crucial Technology, CT8G4DFS8266.M8FD
+Memory Module: BANK 0/DIMM1, 8 GB, DDR4, 2667 MHz, Crucial Technology, CT8G4DFS8266.M8FE
+Memory Module: BANK 1/DIMM1, 8 GB, DDR4, 2667 MHz, Crucial Technology, CT8G4DFS8266.M8FE
+AirPort: spairport_wireless_card_type_airport_extreme (0x14E4, 0x133), Broadcom BCM43xx 1.0 (7.77.61.2 AirPortDriverBrcmNIC-1305.8)
+Bluetooth: Version 6.0.14d3, 3 services, 27 devices, 1 incoming serial ports
+Network Service: Wi-Fi, AirPort, en1
+Serial ATA Device: APPLE HDD HTS541010A9E662, 1 TB
+USB Device: USB 3.0 Bus
+USB Device: USB Receiver
+USB Device: Bluetooth USB Host Controller
+Thunderbolt Bus:
