@@ -62,7 +62,7 @@ Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 | Lilu.kext | 给内核扩展/进程打补丁 | [Lilu](https://github.com/acidanthera/Lilu) |
 | USBPorts.kext | ☠️我的 USB 映射表，你不要用 |  |
 | WhateverGreen.kext | 为主流显卡提供支持 | [WhateverGreen](https://github.com/acidanthera/WhateverGreen) |
-| XHCI-unsupported.kext | 对于 macOS 原生不支持的 Intel xHCI 控制器需要这个注入器 | [https://github.com/RehabMan/OS-X-USB-Inject-All](OS-X-USB-Inject-All) |
+| XHCI-unsupported.kext | 对于 macOS 原生不支持的 Intel xHCI 控制器需要这个注入器 | [OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All) |
 
 ## 安装注意事项
 
