@@ -115,6 +115,16 @@ That tutorial is long and boring, for 8th Gen CPU users, just read this - [corpn
 
 For data security, recommend using Time Machine to back up your system.
 
+## What's working
+
+- [x] Sleep and awake
+- [x] Multi-monitor support
+- [x] Bluetooth, Wi-Fi and ethernet
+- [x] iMessage, Handoff, Continuity, FaceTime and AirDrop
+- [x] Audio in/out put
+- [x] Headless Intel iGPU
+- [x] Time Machine
+
 ## Known issues
 
 ### Bluetooth rarely stops working after sleep.
