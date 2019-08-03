@@ -1,6 +1,6 @@
 # asrock-z370m-pro4-hackintosh
 
-This repo was made for my hardware specifications only, you can use it as a guide, don't use it directly in your build.
+This repo was made for my hardware specifications only, you can use it as your building guide, don't use it directly.
 
 ## Hardware Specifications
 
@@ -40,15 +40,45 @@ Advanced \ Chipset Configuration → Share Memory : 128MB
 
 Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
+## UEFI Drivers
+
+| File | Comment | Website/Doc |
+|------------------|---------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| ApfsDriverLoader | Open source apfs.efi loader based on reverse-engineered Apple's ApfsJumpStart driver | [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg) |
+| AptioMemoryFix | Fix Memory problems on UEFI firmware | [AptioFixPkg](https://github.com/acidanthera/AptioFixPkg) |
+| FSInject | Driver responsible for Clover's /EFI/kexts/XXX kext injection into kernelcache | [FSInject](https://sourceforge.net/p/cloverefiboot/code/HEAD/tree/FSInject/) |
+| SMCHelper | Restore SMC keys left in NVRAM by FakeSMC |  |
+| VBoxHfs | Provide HFS+ support | [VBoxHfs.inf](https://sourceforge.net/p/cloverefiboot/code/HEAD/tree/FileSystems/VBoxFsDxe/VBoxHfs.inf) |
+
+## Kext Files
+
+| File | Comment | Website/Doc |
+|--------------------------------|---------------------------------------------------------|---------------------------------------------------------------------------------------|
+| AppleALC.kext | Native macOS HD audio for not officially supported codecs | [AppleALC](https://github.com/acidanthera/AppleALC) |
+| FakeSMC.kext and FakeSMC_*.kext | Allow you to access information from hardware sensors available on your Mac | [os-x-fakesmc-kozlek](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/src/master/) |
+| IntelMausiEthernet.kext | OS X driver for Intel onboard LAN | [os-x-intel-network](https://bitbucket.org/RehabMan/os-x-intel-network/src/master/) |
+| Lilu.kext | Arbitrary kext and process patching on macOS | [Lilu](https://github.com/acidanthera/Lilu) |
+| USBPorts.kext | ☠️ My USB configuration file, DO NOT USE IT |  |
+| WhateverGreen.kext | Various patches necessary for certain ATI/AMD/Intel/Nvidia GPUs | [WhateverGreen](https://github.com/acidanthera/WhateverGreen) |
+| XHCI-unsupported.kext | Certain Intel xHCI controllers are not supported natively and require an injector | [OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All) |
+
 ## Installation Caveats
+
+### FileVault
+
+No FileVault, more features mean more uncertainties.
+
+### Energy Saver
+
+Uncheck Power Nap, it wakes your Hackintosh up during sleep.
 
 ### Audio
 
-In order to make audio work, Audio Inject's value must be `1`.
+To make audio work, Audio Inject's value must be `1`.
 
 ### Use USB 2.0 port to install macOS
 
-macOS USB installer must be inserted into the USB 2.0 port on the rare of you motherboard. Otherwise, installation will be failed - [AppleUSBHostPort::disconnect: persistent enumeration failures](https://www.tonymacx86.com/threads/solved-appleusbhostport-disconnect-persistent-enumeration-failures-and-shows-stop-sign.265606/#post-1857030).
+macOS USB installer must be inserted into the onboard USB 2.0 port. Otherwise, installation will be failed - [AppleUSBHostPort::disconnect: persistent enumeration failures](https://www.tonymacx86.com/threads/solved-appleusbhostport-disconnect-persistent-enumeration-failures-and-shows-stop-sign.265606/#post-1857030).
 
 ### Make USB work properly
 
@@ -59,7 +89,7 @@ Here are some issues you’re going to have if USB doesn't work properly:
 3. Limit USB 3.0's speed at 480 Mbps.
 4. Need replugging USB devices after reboot/sleep.
 
-In order to make USB and sleep work properly you need to make a USB patch. macOS 10.14.1 has USB port limit, thus you need an earlier version of macOS, for example macOS 10.13.6.
+To make USB and sleep work properly, you need to make a USB patch. macOS 10.14.1 has USB port limit, thus you need an earlier version of macOS, for example, macOS 10.13.6.
 
 ⚠️ When I was building this Hackintosh, there was no USB ports limit patch for macOS 10.14.1, thus I had to install an earlier version of macOS. If you can find the patch for your macOS on this page - [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/), lucky for you, you just saved a lot of time!
 
@@ -69,11 +99,11 @@ After installing macOS 10.13.6 you need to remove USB port limit. Otherwise, you
 
 **2 Use FB Patcher to generate USB patch**
 
-After the USB port limit removal, reboot your computer, and follow this guide to make your own USB patch - [USB Port Patching](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-6-5.254559/).
+After the USB port limit removal, reboot your computer and follow this guide to make your USB patch - [USB Port Patching](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-6-5.254559/).
 
 **3 Store your USB patch file**
 
-Store your USB patch file in a secure place, it's your own patch file, you can't find it anywhere else.
+Store your USB patch file in a secure place, it's your patch file, you can't find it anywhere else.
 
 ### Intel Framebuffer Patching
 
@@ -81,15 +111,25 @@ To make the integrated Intel UHD 630 work, please follow this tutorial to enable
 
 That tutorial is long and boring, for 8th Gen CPU users, just read this - [corpnewt/Hackintosh-Guide](https://github.com/corpnewt/Hackintosh-Guide/blob/master/config.plist-per-hardware/coffee-lake.md#properties).
 
+### Data Protection
+
+For data security, recommend using Time Machine to back up your system.
+
 ## Known issues
 
 ### Bluetooth rarely stops working after sleep.
 
-It happens on real Macs too, in my case it was caused by my Apple Watch trying to unlock my Hackintosh after sleep, reboot bluetooth service with this command: `` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787).
+It happens on real Macs too, in my case, it was caused by my Apple Watch trying to unlock my Hackintosh after sleep, it should be fine if you don't have an Apple Watch.
+
+Reboot bluetooth service with this command: `` $ sudo kill -9 `pgrep bluetoothd` `` - [Restart Bluetooth Daemon on Mac OS X without restarting](https://gist.github.com/nicolasembleton/afc19940da26716f8e90#gistcomment-2636787).
+
+### Kernel panics when running Wireless Diagnostics.
+
+I discovered this issue when I was troubleshooting my home Wi-Fi. I checked the kernel log and can't figure out why, not a big deal, [wireless-diagnostics](./kernel-panics/wireless-diagnostics.log).
 
 ## How to upgrade macOS
 
-❗️ Backup your system, suggest to use [Carbon Copy Cloner](https://bombich.com/) make a bootable backup, you can  boot from your backup and restore the whole system if update fails.
+❗ Backup your system, suggest to use [Carbon Copy Cloner](https://bombich.com/) make a bootable backup, you can boot from your backup and restore the whole system if the update fails.
 
 ❗ Use [Kext Updater](https://bitbucket.org/profdrluigi/kextupdater/downloads/) to update kexts and Clover.
 
@@ -110,7 +150,7 @@ It happens on real Macs too, in my case it was caused by my Apple Watch trying t
 
 HSXX means USB 2.0，SSXX means USB 3.0.
 
-Rear of motherboard:
+Onboard ports:
 
 ![port mapping](./images/motherboard-usb-mapping.png)
 
@@ -133,9 +173,3 @@ Case front panle USB (down)：HS09 SS06
 ### Cinebench
 
 <img src="./images/cinebench.png" alt="cinebench-score">
-
-## Links
-
-1. [如何正确的黑苹果](https://catty-house.blogspot.com/2018/10/hackintosh.html)
-1. [Kernel panic in Safari with UHD 630 + RX 570](https://www.tonymacx86.com/threads/kernel-panic-in-safari-with-uhd-630-rx-570.264222/)
-1. [正确驱动Intel显卡的Framebuffer](https://catty-house.blogspot.com/2018/10/intelframebuffer.html)
