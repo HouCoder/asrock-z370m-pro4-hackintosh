@@ -76,7 +76,14 @@ Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
 ### 音频
 
-为了让音频正常工作，Audio Inject 的值必须为 `1`。
+为了让音频正常工作，AppleALC 的 layout id 值必须为 `1`，可以使用启动参数的形式来添加，在 Boot/Arguments 里增加 `alcid=1` 或者使用 [gfxutil](https://github.com/acidanthera/gfxutil) 获取设备 ID 然后在 Devices/Properties 里添加：
+
+```
+➜  gfxutil-1.78b-RELEASE ./gfxutil -f HDEF
+DevicePath = PciRoot(0x0)/Pci(0x1f,0x3)
+```
+
+![audio-device-injection](./images/audio-device-injection.png)
 
 ### 使用 USB 2.0 接口安装
 
