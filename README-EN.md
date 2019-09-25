@@ -76,6 +76,18 @@ Uncheck Power Nap, it wakes your Hackintosh up during sleep.
 
 To make audio work, Audio Inject's value must be `1`.
 
+The layout id for AppleALC should be `1`，you can either add `alcid=1` into Boot/Arguments or use [gfxutil](https://github.com/acidanthera/gfxutil) to get the audio device id and add it into Devices/Properties:
+
+
+```
+➜  gfxutil-1.78b-RELEASE ./gfxutil -f HDEF
+DevicePath = PciRoot(0x0)/Pci(0x1f,0x3)
+```
+
+![audio-device-injection](./images/audio-device-injection.png)
+
+Why `01000000`? Because decimal 1 in hex is 0x1, this DATA type needs to be 4bytes, thus it's 01 00 00 00.
+
 ### Use USB 2.0 port to install macOS
 
 macOS USB installer must be inserted into the onboard USB 2.0 port. Otherwise, installation will be failed - [AppleUSBHostPort::disconnect: persistent enumeration failures](https://www.tonymacx86.com/threads/solved-appleusbhostport-disconnect-persistent-enumeration-failures-and-shows-stop-sign.265606/#post-1857030).
