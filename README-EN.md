@@ -170,6 +170,7 @@ I discovered this issue when I was troubleshooting my home Wi-Fi. I checked the 
 | macOS Mojave 10.14.6 (18G87)  | 2019.8.6  | No issue |
 | macOS Mojave 10.14.6 (18G95)  | 2019.8.31 | No issue |
 | macOS Mojave 10.14.6 (18G103) | 2019.9.27 | No issue |
+| macOS Catalina 10.15 (19A583) | 2019.10.14 | No issue |
 
 ## USB port mapping
 
