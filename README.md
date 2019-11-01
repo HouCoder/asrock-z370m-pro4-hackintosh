@@ -22,7 +22,7 @@ Wi-Fi 和蓝牙：BCM943602CS
 
 机械硬盘 0：东芝 1TB（time-machine）
 
-机械硬盘 1：希捷 1TB（time-machine 和文件存储）
+机械硬盘 1：希捷 4TB（time-machine 和文件存储）
 
 显示器 0：戴尔 U2718QM
 
