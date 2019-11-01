@@ -16,11 +16,13 @@ Wi-Fi 和蓝牙：BCM943602CS
 
 内存：英睿达 8G DDR4 2666 x 4
 
-硬盘 0：英特尔 760P 512G NVMe M.2 （最新的 macOS）
+固态硬盘 0：英特尔 760P 512G NVMe M.2 （macOS）
 
-硬盘 1：惠普 EX900 250G （最新的 macOS）
+固态硬盘 1：惠普 EX900 250G （macOS）
 
-硬盘 2：东芝 1TB HDD （TimeMachine 备份）
+机械硬盘 0：东芝 1TB（time-machine）
+
+机械硬盘 1：希捷 1TB（time-machine 和文件存储）
 
 显示器 0：戴尔 U2718QM
 
@@ -185,6 +187,7 @@ HSXX 代表的是 USB 2.0，SSXX 代表的是 USB 3.0。
 | macOS Mojave 10.14.6 (18G103) | 2019.9.27 | 正常升级，无异常 |
 | macOS Catalina 10.15 (19A583) | 2019.10.14 | 正常升级，无异常 |
 | macOS Catalina 10.15 (19A602) | 2019.10.18 | 正常升级，无异常 |
+| macOS Catalina 10.15.1 (19B88) | 2019.11.1 | 正常升级，无异常 |
 
 ## 跑分测试
 

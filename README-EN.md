@@ -14,11 +14,13 @@ Wi-Fi & BT: BCM943602CS
 
 RAM: Micron 8G DDR4 2666 x 4
 
-SSD0: Intel 760P 512G NVMe M.2 (The latest macOS)
+SSD0: Intel 760P 512G NVMe M.2 (macOS)
 
-SSD1: HP EX900 250G (The latest macOS)
+SSD1: HP EX900 250G (macOS)
 
-HDD0: Toshiba 1TB HDD (TimeMachine)
+HDD0: Toshiba 1TB (time-machine)
+
+HDD1: Seagate 4TB (time-machine and file storage)
 
 Display0: Dell U2718QM
 
@@ -172,6 +174,7 @@ I discovered this issue when I was troubleshooting my home Wi-Fi. I checked the 
 | macOS Mojave 10.14.6 (18G103) | 2019.9.27 | No issue |
 | macOS Catalina 10.15 (19A583) | 2019.10.14 | No issue |
 | macOS Catalina 10.15 (19A602) | 2019.10.18 | No issue |
+| macOS Catalina 10.15.1 (19B88) | 2019.11.1 | No issue |
 
 ## USB port mapping
 
