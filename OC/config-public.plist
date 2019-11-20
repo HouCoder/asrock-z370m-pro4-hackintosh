@@ -403,7 +403,7 @@
 		<key>Generic</key>
 		<dict>
 			<key>MLB</key>
-			<string>C02750207QXJ0DXJA</string>
+			<string></string>
 			<key>ROM</key>
 			<data>
 			ESIzAAAA
@@ -413,9 +413,9 @@
 			<key>SystemProductName</key>
 			<string>iMac18,2</string>
 			<key>SystemSerialNumber</key>
-			<string>C02VT3ZNJ1G5</string>
+			<string></string>
 			<key>SystemUUID</key>
-			<string>0DD423DC-2E3E-4419-BF78-CA1CB929E27F</string>
+			<string></string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -492,9 +492,9 @@
 			<key>IgnoreInvalidFlexRatio</key>
 			<false/>
 			<key>IgnoreTextInGraphics</key>
-			<false/>
+			<true/>
 			<key>ProvideConsoleGop</key>
-			<false/>
+			<true/>
 			<key>ReconnectOnResChange</key>
 			<false/>
 			<key>ReleaseUsbOwnership</key>
