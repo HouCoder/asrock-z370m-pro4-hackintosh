@@ -8,7 +8,7 @@
 
 CPU：英特尔 i5 8400
 
-主板：[华擎 Z370M Pro4](https://www.asrock.com/MB/Intel/Z370M%20Pro4/index.asp)
+主板：华擎 Z370M Pro4
 
 显卡：蓝宝石 RX560 4G D5 白金版 OC (75W)
 
@@ -18,11 +18,11 @@ Wi-Fi 和蓝牙：BCM943602CS
 
 固态硬盘 0：英特尔 760P 512G（macOS）
 
-固态硬盘 1：Samsung 970 EVO Plus 250（macOS）
+固态硬盘 1：Samsung 970 EVO Plus 250G（macOS）
 
-机械硬盘 0：东芝 1TB（time-machine）
+机械硬盘 0：东芝 1TB（Time Machine）
 
-机械硬盘 1：希捷 4TB（time-machine 和文件存储）
+机械硬盘 1：希捷 4TB（Time Machine 和文件存储）
 
 显示器 0：戴尔 U2718QM
 
@@ -102,7 +102,7 @@ USB 不正常工作的表现有：
 
 **2 使用 Hackintool 制作 USB 补丁**
 
-安装完上面的补丁后重启电脑应该可以看到所有的 USB 接口了，然后使用 [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/) 来生成 USB 不定。
+安装完上面的补丁后重启电脑应该可以看到所有的 USB 接口了，然后使用 [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/) 来生成 USB 补丁。
 
 **3 保存好制作的补丁**
 
@@ -127,7 +127,7 @@ USB 不正常工作的表现有：
 - [x] 音频输入和输出
 - [x] Headless 模式下的 Intel iGPU
 - [x] Time Machine
-- [x] Boot into recovery mode
+- [x] 启动至 Recovery Mode
 
 ## 升级系统怎么办？
 
