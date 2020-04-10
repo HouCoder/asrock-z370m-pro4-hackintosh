@@ -1,8 +1,13 @@
 # asrock-z370m-pro4-hackintosh
 
+[English version](./README_EN.md)
+
 切换到了更加先进的 OpenCore，如果想查看 Clover 的版本的话请访问分支：[clover-deprecated](https://github.com/HouCoder/asrock-z370m-pro4-hackintosh/tree/clover-deprecated)。
 
-该项目只针对我的配置，仅供参考，不要盲目使用，config-public.plist 里 PlatformInfo -> Generic 信息需要自己手动生成，生成方法请参考 - [Coffee Lake/Platforminfo](https://khronokernel-2.gitbook.io/opencore-vanilla-desktop-guide/config.plist/coffee-lake#platforminfo)。
+该项目只针对我的配置，不要直接使用。使用的话需要特别注意两个问题：
+
+1. config-public.plist 里 `PlatformInfo` -> `Generic` 信息需要自己手动生成，生成方法请参考 - [Coffee Lake/Platforminfo](https://khronokernel-2.gitbook.io/opencore-vanilla-desktop-guide/config.plist/coffee-lake#platforminfo)。
+2. 不要使用 `OC/Kexts/USBPorts.kext`。
 
 ## 硬件
 
@@ -85,38 +90,15 @@ DevicePath = PciRoot(0x0)/Pci(0x1f,0x3)
 
 ### 让 USB 顺利工作
 
-USB 不正常工作的表现有：
+建议按照这个教程制作属于自己电脑的 USB 补丁 - [The New Beginner's Guide to USB Port Configuration](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/)。
 
-1. USB 不能识别。
-2. 睡眠后会立即醒来。
-3. USB 3.0 的速度会限制在 480 Mbps。
-4. 重启后 USB 设备丢失，需要重新插拔。
+### 集成显卡
 
-为了让 USB 和睡眠正常的工作需要制作 USB 补丁，macOS 10.14.1 下有 USB 端口限制，需要安装之前版本的 macOS 来制作 USB 补丁，以 macOS 10.13.6 下制作的安装补丁为例。
-
-⚠️  我安装的时候网上还没出现针对 macOS 10.14.1 的移除 USB 端口限制补丁，安装旧版本实属无奈之举。如果你可以在 [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/) 中找到与你安装的 macOS 版本对应的解除 USB 限制补丁的话就不需要安装老版本的 macOS 了。
-
-**1 移除 USB 端口限制**
-
-安装完 macOS 10.13.6 后需要移除 USB 端口限制，如果不移除你只能在 Hackintool 上看到 15 个 USB 端口。移除方法请参考 [List of Hackintosh USB Port Limit Patches (10.14 Updated)](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/)。
-
-**2 使用 Hackintool 制作 USB 补丁**
-
-安装完上面的补丁后重启电脑应该可以看到所有的 USB 接口了，然后使用 [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/) 来生成 USB 补丁。
-
-**3 保存好制作的补丁**
-
-补丁制作完成后一定要好好保存，因为是针对自己电脑独有的文件，网上找不到第二份。
-
-### Intel Framebuffer Patching
-
-为了让集成的 Intel UHD 630 显卡正常的工作，需要做 Framebuffer Patching，具体步骤参考这个文档 - [Intel Framebuffer patching using WhateverGreen](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/)。
-
-文章很长，很难懂，8 代 CPU 直接看这里即可：[corpnewt/Hackintosh-Guide](https://github.com/corpnewt/Hackintosh-Guide/blob/master/config.plist-per-hardware/coffee-lake.md#properties)。
+按照这里的步骤即可 - [Coffee Lake / DeviceProperties](https://desktop.dortania.ml/config.plist/coffee-lake.html#deviceproperties)。
 
 ### 数据备份
 
-即使黑苹果很成熟了但仍具有不确定性，强烈建议准备第二块 HDD 开启 Time Machine 备份。
+无论黑苹果白苹果，强烈建议使用第另一块硬盘开启 Time Machine 备份。
 
 ## 正常的功能
 
@@ -131,9 +113,9 @@ USB 不正常工作的表现有：
 
 ## 升级系统怎么办？
 
-❗️ 升级前备份系统，最好做一个可启动的备份，推荐使用 [Carbon Copy Cloner](https://bombich.com/)，失败后从备份启动然后再用 Carbon Copy Cloner 把备份拷贝到主硬盘上。
+❗️ 升级前备份系统，最好做一个可启动的备份，推荐使用 [SuperDuper](https://www.shirt-pocket.com/)，失败后从备份启动然后再用 SuperDuper 把备份拷贝到主硬盘上。
 
-❗️ 升级前升级必要的 kexts 和 OpenCore，推荐使用 [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/) 来升级。
+❗️ 升级前升级必要的 kexts、UEFI 驱动 和 OpenCore，推荐使用 [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/) 来升级。
 
 ❗️ 不要第一时间升级，新系统推送后去社区先看看问题反馈。
 
