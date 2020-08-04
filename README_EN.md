@@ -90,7 +90,7 @@ Recommend to generate your own USB port map file - [The New Beginner's Guide to 
 
 ### iGPU
 
-Just follow the steps in here - [Coffee Lake / DeviceProperties](https://desktop.dortania.ml/config.plist/coffee-lake.html#deviceproperties).
+Just follow the steps in here - [Coffee Lake / DeviceProperties](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/coffee-lake.html#deviceproperties).
 
 ### Data backup
 

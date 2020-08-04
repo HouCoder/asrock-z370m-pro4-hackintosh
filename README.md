@@ -94,7 +94,7 @@ DevicePath = PciRoot(0x0)/Pci(0x1f,0x3)
 
 ### 集成显卡
 
-按照这里的步骤即可 - [Coffee Lake / DeviceProperties](https://desktop.dortania.ml/config.plist/coffee-lake.html#deviceproperties)。
+按照这里的步骤即可 - [Coffee Lake / DeviceProperties](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/coffee-lake.html#deviceproperties)。
 
 ### 数据备份
 
