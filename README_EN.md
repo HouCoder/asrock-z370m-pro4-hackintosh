@@ -135,6 +135,7 @@ Hackintosh or genuine Mac, it's always a good thing to use Time Machine to backu
 | macOS Catalina 10.15.4 (19E287) | 2020.4.9| No issue |
 | macOS Catalina 10.15.5 (19F96) | 2020.5.30| No issue |
 | macOS Catalina 10.15.6 (19G73) | 2020.8.4| No issue |
+| macOS Catalina 10.15.6 (19G2021) | 2020.8.13| No issue |
 
 ## USB port mapping
 
