@@ -93,7 +93,7 @@ DevicePath = PciRoot(0x0)/Pci(0x1f,0x3)
 
 ![audio-device-injection](./images/audio-device-injection.png)
 
-为什么是 `01000000`？因为 1 是十进制, 转换成 hex 就是 0x1 , 这个 DATA 需要 4bytes, 补全后就是 01 00 00 00。
+为什么是 `01000000`？因为 1 是十进制, 转换成 hex 就是 0x1 , 这个 DATA 需要 4bytes, 补全后就是 `01000000`。
 
 ### 使用 USB 2.0 接口安装
 
