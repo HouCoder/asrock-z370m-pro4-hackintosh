@@ -44,7 +44,7 @@ Wi-Fi 和蓝牙芯片在 macOS 下插上就能用，不需要任何配置。
 - [x] Time Machine
 - [x] 启动至 Recovery Mode
 
-* It works just like a genuine Mac.
+*It works just like a genuine Mac.*
 
 ## BIOS 设置
 
