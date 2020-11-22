@@ -1,17 +1,17 @@
 # asrock-z370m-pro4-hackintosh
 
-OpenCore is more advanced than Clover, check out the [clover-deprecated](https://github.com/HouCoder/asrock-z370m-pro4-hackintosh/tree/clover-deprecated) branch if you want to see Clover settings.
+OpenCore is more advanced than Clover in many ways, check out the [clover-deprecated](https://github.com/HouCoder/asrock-z370m-pro4-hackintosh/tree/clover-deprecated) branch if you want to see Clover configurations.
 
-This project can not be used as is, if you want to use it be aware of the two issues.
+This project can not be used as is, if you want to use it beaware these two issues.
 
-1. You need to generate `PlatformInfo` -> `Generic` by yourself, [Coffee Lake/Platforminfo](https://khronokernel-2.gitbook.io/opencore-vanilla-desktop-guide/config.plist/coffee-lake#platforminfo).
+1. You need to generate `PlatformInfo` -> `Generic` by yourself, see [corpnewt/GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 2. Do not use `OC/Kexts/USBPorts.kext`.
 
 ## Hardware Specifications
 
 CPU: Intel i5 8400
 
-Motherboard: [Asrock Z370M Pro4](https://www.asrock.com/MB/Intel/Z370M%20Pro4/index.asp)
+Motherboard: Asrock Z370M Pro4
 
 Graphic Card: SAPPHIRE PULSE Radeon™ RX 560 4GD5
 
@@ -23,15 +23,26 @@ SSD0: Intel 760P 512G NVMe M.2 (macOS)
 
 SSD1: Samsung 970 EVO Plus 250G（macOS）
 
-HDD0: Toshiba 1TB (time-machine)
-
-HDD1: Seagate 4TB (time-machine and file storage)
+HDD0: Seagate 4TB (time-machine and file storage)
 
 Display0: Dell U2718QM
 
 Display1: Dell U2414H
 
-Wi-Fi & BT card are natively supported by macOS, work out of box.
+Wi-Fi & BT are natively supported by macOS, work out of box.
+
+## What's working
+
+- [x] Sleep and awake
+- [x] Multi-monitor support
+- [x] Bluetooth, Wi-Fi and ethernet
+- [x] iMessage, Handoff, Continuity, FaceTime and AirDrop
+- [x] Audio in/out put
+- [x] Headless Intel iGPU
+- [x] Time Machine
+- [x] Boot into Recovery Mode
+
+*It works just like a genuine Mac.*
 
 ## BIOS Settings
 
@@ -51,9 +62,9 @@ Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
 ### CPU
 
-[SSDT-PLUG](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl) requires the correct CPU ID on your system and compile it to aml file, without it you won't see Powernap options in Energy Saver panel.
+[SSDT-PLUG](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl) requires the correct CPU ID on your system and compile it to an aml file, without it you won't see Powernap option in Energy Saver panel.
 
-Here we use [MaciASL](https://github.com/acidanthera/MaciASL) to find CPU ID, open MaciASL and search `processor`, the first match is your CPU ID:
+Here we use [MaciASL](https://github.com/acidanthera/MaciASL) to find the correct CPU ID, open MaciASL and search `processor`, the first match is your CPU ID:
 
 ![MaciASL](images/MaciASL.png)
 
@@ -67,7 +78,7 @@ No, don't use it, let's keep it simple.
 
 ### Enegy Saver
 
-Disable Power Nap, it wakes your Hackintosh up during sleep.
+Disable Power Nap, it may wake your Hackintosh up during sleep.
 
 ### Audio
 
@@ -82,7 +93,7 @@ DevicePath = PciRoot(0x0)/Pci(0x1f,0x3)
 
 ### Use USB 2.0 port to install macOS
 
-I recommend to use USB 2.0 port to install macOS if you don't have USB port patch due to macOS's 15 USB port limit -  - [AppleUSBHostPort::disconnect: persistent enumeration failures](https://www.tonymacx86.com/threads/solved-appleusbhostport-disconnect-persistent-enumeration-failures-and-shows-stop-sign.265606/#post-1857030).
+Recommend to use a USB 2.0 port to install macOS if you have not configured your USB patch - [AppleUSBHostPort::disconnect: persistent enumeration failures](https://www.tonymacx86.com/threads/solved-appleusbhostport-disconnect-persistent-enumeration-failures-and-shows-stop-sign.265606/#post-1857030).
 
 ### USB Port Configuration
 
@@ -90,30 +101,19 @@ Recommend to generate your own USB port map file - [The New Beginner's Guide to 
 
 ### iGPU
 
-Just follow the steps in here - [Coffee Lake / DeviceProperties](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/coffee-lake.html#deviceproperties).
+Just follow the steps here - [Coffee Lake / DeviceProperties](https://github.com/dortania/OpenCore-Install-Guide/blob/master/config.plist/coffee-lake.md#deviceproperties).
 
 ### Data backup
 
 Hackintosh or genuine Mac, it's always a good thing to use Time Machine to backup your data.
 
-## What's working
-
-- [x] Sleep and awake
-- [x] Multi-monitor support
-- [x] Bluetooth, Wi-Fi and ethernet
-- [x] iMessage, Handoff, Continuity, FaceTime and AirDrop
-- [x] Audio in/out put
-- [x] Headless Intel iGPU
-- [x] Time Machine
-- [x] Boot into Recovery Mode
-
 ## How to upgrade macOS
 
-❗ Backup your system, suggest to use [SuperDuper](https://www.shirt-pocket.com/) make a bootable backup, you can boot from your backup and restore the whole system if the update fails.
+1. Backup your system, suggest to use [SuperDuper](https://www.shirt-pocket.com/) make a bootable backup, you can boot from your backup and restore the whole system if the update fails.
 
-❗️ Update kexts、UEFI drivers and OpenCore, recommend to use [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/) to update them.
+2. Update kexts、UEFI drivers and OpenCore, recommend to use [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/) to update them.
 
-❗ Be cautious, check online forums for potential issues before updating.
+3. Be cautious, check online forums and OpenCore doc for potential issues before updating.
 
 ## System upgrade history
 
@@ -148,9 +148,9 @@ Onboard ports:
 
 Bluetooth: HS05
 
-Case front panle USB (up)：HS09 SS06
+Front panle USB (up)：HS09 SS06
 
-Case front panle USB (down)：HS09 SS06
+Front panle USB (down)：HS09 SS06
 
 ## Benchmarks
 
@@ -166,8 +166,6 @@ Case front panle USB (down)：HS09 SS06
 
 <img src="./images/cinebench.png" alt="cinebench-score">
 
-## Links
+## Some useful links
 
-1. [Opencore Vanilla Desktop Guide](https://khronokernel-2.gitbook.io/opencore-vanilla-desktop-guide/)
-2. [corpnewt/USBMap](https://github.com/corpnewt/USBMap)
-3. [cattyhouse/oc-guide](https://github.com/cattyhouse/oc-guide)
+1. [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)

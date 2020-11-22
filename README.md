@@ -2,7 +2,7 @@
 
 [English version](./README_EN.md)
 
-切换到了更加先进的 OpenCore，如果想查看 Clover 的版本的话请访问分支：[clover-deprecated](https://github.com/HouCoder/asrock-z370m-pro4-hackintosh/tree/clover-deprecated)。
+切换到了更加先进的 OpenCore，如果想查看 Clover 版本的话请访问 [clover-deprecated](https://github.com/HouCoder/asrock-z370m-pro4-hackintosh/tree/clover-deprecated) 分支。
 
 该项目只针对我的配置，不要直接使用。使用的话需要特别注意两个问题：
 
@@ -92,8 +92,6 @@ DevicePath = PciRoot(0x0)/Pci(0x1f,0x3)
 ```
 
 ![audio-device-injection](./images/audio-device-injection.png)
-
-为什么是 `01000000`？因为 1 是十进制, 转换成 hex 就是 0x1 , 这个 DATA 需要 4bytes, 补全后就是 `01000000`。
 
 ### 使用 USB 2.0 接口安装
 
