@@ -68,7 +68,7 @@ Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
 以我的配置举例，scope 是 `_PR`，CPU ID 是 `PR00`，所以我的 SSDT-PLUG 应该是这样的 - [SSDT-PLUG.dsl](OC/ACPI/SSDT-PLUG.dsl)。
 
-详细的文档可以参考 - [Fixing Power Management: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug-methods/manual.html)。
+详细的文档请参考 - [Fixing Power Management: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug-methods/manual.html)。
 
 ### FileVault
 
@@ -99,7 +99,7 @@ DevicePath = PciRoot(0x0)/Pci(0x1f,0x3)
 
 以我的配置举例，scope 是 `_SB.PCI0.LPCB`，device 是 `H_EC`，所以我的 SSDT-PLUG 应该是这样的 - [SSDT-EC-USBX.dsl](OC/ACPI/SSDT-PLUG.dsl)。
 
-详细的文档可以参考 - [Fixing Embedded Controllers: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-methods/manual.html)。
+详细的文档请参考 - [Fixing Embedded Controllers: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-methods/manual.html)。
 
 USB 补丁制作请参考 - [The New Beginner's Guide to USB Port Configuration](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/)。
 
