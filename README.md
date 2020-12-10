@@ -1,13 +1,13 @@
 # asrock-z370m-pro4-hackintosh
 
-[English version](./README_EN.md)
+[English Version](./README_EN.md)
 
 切换到了更加先进的 OpenCore，如果想查看 Clover 版本的话请访问 [clover-deprecated](https://github.com/HouCoder/asrock-z370m-pro4-hackintosh/tree/clover-deprecated) 分支。
 
 该项目只针对我的配置，不要直接使用。使用的话需要特别注意两个问题：
 
 1. config-public.plist 里 `PlatformInfo` -> `Generic` 信息需要自己手动生成，生成方法请参考 [corpnewt/GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)。
-2. 不要使用 `OC/Kexts/USBPorts.kext` 和 ACPI 配置。
+2. 不要使用 `OC/Kexts/USBPorts.kext` 和 `OC/ACPI` 里面的所有文件。
 
 ## 硬件
 
@@ -97,7 +97,7 @@ DevicePath = PciRoot(0x0)/Pci(0x1f,0x3)
 
 [SSDT-EC-USBX.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl) 也需要正确的设置。
 
-以我的配置举例，scope 是 `_SB.PCI0.LPCB`，device 是 `H_EC`，所以我的 SSDT-PLUG 应该是这样的 - [SSDT-EC-USBX.dsl](OC/ACPI/SSDT-PLUG.dsl)。
+以我的配置举例，scope 是 `_SB.PCI0.LPCB`，device 是 `H_EC`，所以我的 SSDT-PLUG 应该是这样的 - [SSDT-EC-USBX.dsl](SSDT-EC-USBX.dsl)。
 
 详细的文档请参考 - [Fixing Embedded Controllers: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-methods/manual.html)。
 

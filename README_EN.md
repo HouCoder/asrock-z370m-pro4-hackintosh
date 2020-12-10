@@ -5,7 +5,7 @@ OpenCore is more advanced than Clover in many ways, check out the [clover-deprec
 This project can not be used as is, if you want to use it beaware these two issues.
 
 1. You need to generate `PlatformInfo` -> `Generic` by yourself, see [corpnewt/GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
-2. Do not use `OC/Kexts/USBPorts.kext`.
+2. Do not use `OC/Kexts/USBPorts.kext` and all files in `OC/ACPI`.
 
 ## Hardware Specifications
 
@@ -62,15 +62,11 @@ Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
 ### CPU
 
-[SSDT-PLUG](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl) requires the correct CPU ID on your system and compile it to an aml file, without it you won't see Powernap option in Energy Saver panel.
+[SSDT-PLUG](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl) requires the correct CPU ID on your system and compile it to an aml file, without it you won't see the Powernap option in Energy Saver panel and your CPU frequency chart will be a roller coaster.
 
-Here we use [MaciASL](https://github.com/acidanthera/MaciASL) to find the correct CPU ID, open MaciASL and search `processor`, the first match is your CPU ID:
+In my case, scope is `_PR`, device is `PR00`, thus this is my SSDT-PLUG.dsl - [SSDT-PLUG.dsl](OC/ACPI/SSDT-PLUG.dsl).
 
-![MaciASL](images/MaciASL.png)
-
-Then change `External (_PR_.CPU0, ProcessorObj)` to `External (_PR.PR00, ProcessorObj)`，`Scope (\_PR.CPU0)` to `Scope (\_PR.PR00)` in SSDT-PLUG.dsl.
-
-Last but not least, in MaciASL click File -> Save As..., set File Format to `ACPI Machine Language Binary` and click OK.
+Find more details here - [Fixing Power Management: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug-methods/manual.html).
 
 ### FileVault
 
@@ -97,6 +93,12 @@ Recommend to use a USB 2.0 port to install macOS if you have not configured your
 
 ### USB Port Configuration
 
+[SSDT-EC-USBX.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl) also needs properly configured.
+
+In my case, scope is `_SB.PCI0.LPCB`, device is `H_EC`, thus this is my SSDT-EC-USBX - [SSDT-EC-USBX.dsl](OC/ACPI/SSDT-EC-USBX.dsl).
+
+Find more details here - [Fixing Embedded Controllers: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-methods/manual.html).
+
 Recommend to generate your own USB port map file - [The New Beginner's Guide to USB Port Configuration](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/).
 
 ### iGPU
@@ -115,28 +117,29 @@ Hackintosh or genuine Mac, it's always a good thing to use Time Machine to backu
 
 3. Be cautious, check online forums and OpenCore doc for potential issues before updating.
 
-## System upgrade history
+## System update history
 
-| Version | Date | Comment |
-|-------------------------------|-----------|----------|
-| macOS Mojave 10.14.2 (18C54)  | 2018.12.7 | No issue |
-| macOS Mojave 10.14.3 (18D42)  | 2019.1.23 | No issue |
-| macOS Mojave 10.14.3 (18D109) | 2019.2.11 | No issue |
-| macOS Mojave 10.14.4 (18E226) | 2019.3.26 | No issue |
-| macOS Mojave 10.14.5 (18F132) | 2019.5.14 | No issue |
-| macOS Mojave 10.14.6 (18G84)  | 2019.7.23 | No issue |
-| macOS Mojave 10.14.6 (18G87)  | 2019.8.6  | No issue |
-| macOS Mojave 10.14.6 (18G95)  | 2019.8.31 | No issue |
-| macOS Mojave 10.14.6 (18G103) | 2019.9.27 | No issue |
-| macOS Catalina 10.15 (19A583) | 2019.10.14 | No issue |
-| macOS Catalina 10.15 (19A602) | 2019.10.18 | No issue |
-| macOS Catalina 10.15.1 (19B88) | 2019.11.1 | No issue |
-| macOS Catalina 10.15.2 (19C57) | 2019.12.15| No issue |
-| macOS Catalina 10.15.4 (19E287) | 2020.4.9| No issue |
-| macOS Catalina 10.15.5 (19F96) | 2020.5.30| No issue |
-| macOS Catalina 10.15.6 (19G73) | 2020.8.4| No issue |
-| macOS Catalina 10.15.6 (19G2021) | 2020.8.13| No issue |
-| macOS Catalina 10.15.7 (19H15) | 2020.11.8| No issue |
+| Version | Date | Comment | OpenCore Version |
+|-------------------------------|-----------|----------|----------|
+| macOS Mojave 10.14.2 (18C54)  | 2018.12.7 | No issue | |
+| macOS Mojave 10.14.3 (18D42)  | 2019.1.23 | No issue | |
+| macOS Mojave 10.14.3 (18D109) | 2019.2.11 | No issue | |
+| macOS Mojave 10.14.4 (18E226) | 2019.3.26 | No issue | |
+| macOS Mojave 10.14.5 (18F132) | 2019.5.14 | No issue | |
+| macOS Mojave 10.14.6 (18G84)  | 2019.7.23 | No issue | |
+| macOS Mojave 10.14.6 (18G87)  | 2019.8.6  | No issue | |
+| macOS Mojave 10.14.6 (18G95)  | 2019.8.31 | No issue | |
+| macOS Mojave 10.14.6 (18G103) | 2019.9.27 | No issue | |
+| macOS Catalina 10.15 (19A583) | 2019.10.14 | No issue | |
+| macOS Catalina 10.15 (19A602) | 2019.10.18 | No issue | |
+| macOS Catalina 10.15.1 (19B88) | 2019.11.1 | No issue | |
+| macOS Catalina 10.15.2 (19C57) | 2019.12.15| No issue | |
+| macOS Catalina 10.15.4 (19E287) | 2020.4.9| No issue | |
+| macOS Catalina 10.15.5 (19F96) | 2020.5.30| No issue | |
+| macOS Catalina 10.15.6 (19G73) | 2020.8.4| No issue | |
+| macOS Catalina 10.15.6 (19G2021) | 2020.8.13| No issue | |
+| macOS Catalina 10.15.7 (19H15) | 2020.11.8| No issue | |
+| macOS Big Sur 11.0.1 (20B29) | 2020.12.8| No issue | 0.6.4 |
 
 ## USB port mapping
 
