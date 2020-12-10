@@ -2,11 +2,11 @@
 
 [English version](./README_EN.md)
 
-切换到了更加先进的 OpenCore，如果想查看 Clover 的版本的话请访问分支：[clover-deprecated](https://github.com/HouCoder/asrock-z370m-pro4-hackintosh/tree/clover-deprecated)。
+切换到了更加先进的 OpenCore，如果想查看 Clover 版本的话请访问 [clover-deprecated](https://github.com/HouCoder/asrock-z370m-pro4-hackintosh/tree/clover-deprecated) 分支。
 
 该项目只针对我的配置，不要直接使用。使用的话需要特别注意两个问题：
 
-1. config-public.plist 里 `PlatformInfo` -> `Generic` 信息需要自己手动生成，生成方法请参考 - [Coffee Lake/Platforminfo](https://khronokernel-2.gitbook.io/opencore-vanilla-desktop-guide/config.plist/coffee-lake#platforminfo)。
+1. config-public.plist 里 `PlatformInfo` -> `Generic` 信息需要自己手动生成，生成方法请参考 [corpnewt/GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)。
 2. 不要使用 `OC/Kexts/USBPorts.kext`。
 
 ## 硬件
@@ -21,19 +21,30 @@ Wi-Fi 和蓝牙：BCM943602CS
 
 内存：英睿达 8G DDR4 2666 x 4
 
-固态硬盘 0：英特尔 760P 512G（macOS）
+固态硬盘 0：英特尔 760P 512G（macOS 个人用）
 
-固态硬盘 1：Samsung 970 EVO Plus 250G（macOS）
+固态硬盘 1：Samsung 970 EVO Plus 250G（macOS 工作用）
 
-机械硬盘 0：东芝 1TB（Time Machine）
-
-机械硬盘 1：希捷 4TB（Time Machine 和文件存储）
+机械硬盘 0：希捷 4TB（Time Machine 和文件存储）
 
 显示器 0：戴尔 U2718QM
 
 显示器 1：戴尔 U2414H
 
 Wi-Fi 和蓝牙芯片在 macOS 下插上就能用，不需要任何配置。
+
+## 正常的功能
+
+- [x] 系统睡眠与唤醒
+- [x] 多显示器支持
+- [x] 蓝牙、Wi-Fi 和有线网络
+- [x] iMessage、Handoff、Continuity、FaceTime 和 AirDrop
+- [x] 音频输入和输出
+- [x] Headless 模式下的 Intel iGPU
+- [x] Time Machine
+- [x] 启动至 Recovery Mode
+
+*It works just like a genuine Mac.*
 
 ## BIOS 设置
 
@@ -53,15 +64,11 @@ Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
 ### CPU
 
-[SSDT-PLUG](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl) 需要手动设置 CPU ID 后编译成 aml 文件后才能正常工作，如果没有设置正确可能会出现电源选项里面看不到 Powernap 选项的问题。
+[SSDT-PLUG](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl) 需要手动设置 CPU ID 后编译成 aml 文件后才能正常工作，如果没有设置正确会出现电源选项里面看不到 Powernap 选项和待机状态下 CPU 频率出现大幅波动的问题。
 
-这里使用 [MaciASL](https://github.com/acidanthera/MaciASL) 来查找 CPU ID，打开 MaciASL 后搜索 `processor`，出来的第一个结果就是你的 CPU ID，参考下图：
+以我的配置举例，scope 是 `_PR`，CPU ID 是 `PR00`，所以我的 SSDT-PLUG 应该是这样的 - [SSDT-PLUG.dsl](OC/ACPI/SSDT-PLUG.dsl)。
 
-![MaciASL](images/MaciASL.png)
-
-这里我们需要把 SSDT-PLUG.dsl 里面的 `External (_PR_.CPU0, ProcessorObj)` 修改为 `External (_PR.PR00, ProcessorObj)`，`Scope (\_PR.CPU0)` 修改为 `Scope (\_PR.PR00)`。
-
-用 MaciASL 修改 SSDT-PLUG.dsl 后，依次点击 File -> Save As...，在弹出的对话框里面 File Format 选择 `ACPI Machine Language Binary` 保存即可。
+详细的文档可以参考 - [Fixing Power Management: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug-methods/manual.html)。
 
 ### FileVault
 
@@ -69,7 +76,7 @@ Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
 ### 节能选项
 
-禁用 Power Nap，它会导致系统在睡眠状态下自动唤醒。
+禁用 Power Nap，它可能会导致系统在睡眠状态下自动唤醒。
 
 ### 音频
 
@@ -82,42 +89,35 @@ DevicePath = PciRoot(0x0)/Pci(0x1f,0x3)
 
 ![audio-device-injection](./images/audio-device-injection.png)
 
-为什么是 `01000000`？因为 1 是十进制, 转换成 hex 就是 0x1 , 这个 DATA 需要 4bytes, 补全后就是 01 00 00 00。
-
-### 使用 USB 2.0 接口安装
+### 使用 USB 2.0 接口安装 macOS
 
 如果还没有 USB 补丁的话，制作完 USB 安装盘后务必插在主板背部的 USB 2.0 的接口上安装，否则安装会报错 - [AppleUSBHostPort::disconnect: persistent enumeration failures](https://www.tonymacx86.com/threads/solved-appleusbhostport-disconnect-persistent-enumeration-failures-and-shows-stop-sign.265606/#post-1857030)。
 
-### 让 USB 顺利工作
+### USB
 
-建议按照这个教程制作属于自己电脑的 USB 补丁 - [The New Beginner's Guide to USB Port Configuration](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/)。
+[SSDT-EC-USBX.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl) 也需要正确的设置。
+
+以我的配置举例，scope 是 `_SB.PCI0.LPCB`，device 是 `H_EC`，所以我的 SSDT-PLUG 应该是这样的 - [SSDT-EC-USBX.dsl](OC/ACPI/SSDT-PLUG.dsl)。
+
+详细的文档可以参考 - [Fixing Embedded Controllers: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-methods/manual.html)。
+
+USB 补丁制作请参考 - [The New Beginner's Guide to USB Port Configuration](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/)。
 
 ### 集成显卡
 
-按照这里的步骤即可 - [Coffee Lake / DeviceProperties](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/coffee-lake.html#deviceproperties)。
+按照这里的配置方法 - [Coffee Lake / DeviceProperties](https://github.com/dortania/OpenCore-Install-Guide/blob/master/config.plist/coffee-lake.md#deviceproperties)。
 
 ### 数据备份
 
-无论黑苹果白苹果，强烈建议使用第另一块硬盘开启 Time Machine 备份。
+无论黑苹果白苹果，强烈建议开启 Time Machine 备份。
 
-## 正常的功能
+## 升级系统前需要做什么？
 
-- [x] 系统睡眠与唤醒
-- [x] 多显示器支持
-- [x] 蓝牙、Wi-Fi 和有线网络
-- [x] iMessage、Handoff、Continuity、FaceTime 和 AirDrop
-- [x] 音频输入和输出
-- [x] Headless 模式下的 Intel iGPU
-- [x] Time Machine
-- [x] 启动至 Recovery Mode
+1. 备份系统，最好做一个可启动的备份，推荐使用 [SuperDuper](https://www.shirt-pocket.com/)，如果升级失败从备份启动然后再用 SuperDuper 把备份拷贝到主硬盘上即可。
 
-## 升级系统怎么办？
+2. 升级必要的 kexts、UEFI 驱动和 OpenCore，推荐使用 [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/) 来升级。
 
-❗️ 升级前备份系统，最好做一个可启动的备份，推荐使用 [SuperDuper](https://www.shirt-pocket.com/)，失败后从备份启动然后再用 SuperDuper 把备份拷贝到主硬盘上。
-
-❗️ 升级前升级必要的 kexts、UEFI 驱动 和 OpenCore，推荐使用 [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/) 来升级。
-
-❗️ 不要第一时间升级，新系统推送后去社区先看看问题反馈。
+3. 去社区先看看问题反馈，仔细查阅 OpenCore 文档。
 
 ## USB 端口映射关系
 
@@ -135,26 +135,27 @@ HSXX 代表的是 USB 2.0，SSXX 代表的是 USB 3.0。
 
 ## 升级记录
 
-| 版本 | 日期 | 备注 |
-|-------------------------------|-----------|----------|
-| macOS Mojave 10.14.2 (18C54)  | 2018.12.7 | 正常升级，无异常 |
-| macOS Mojave 10.14.3 (18D42)  | 2019.1.23 | 正常升级，无异常 |
-| macOS Mojave 10.14.3 (18D109) | 2019.2.11 | 正常升级，无异常 |
-| macOS Mojave 10.14.4 (18E226) | 2019.3.26 | 正常升级，无异常 |
-| macOS Mojave 10.14.5 (18F132) | 2019.5.16 | 正常升级，无异常 |
-| macOS Mojave 10.14.6 (18G84)  | 2019.7.23 | 正常升级，无异常 |
-| macOS Mojave 10.14.6 (18G87)  | 2019.8.6  | 正常升级，无异常 |
-| macOS Mojave 10.14.6 (18G95)  | 2019.8.31 | 正常升级，无异常 |
-| macOS Mojave 10.14.6 (18G103) | 2019.9.27 | 正常升级，无异常 |
-| macOS Catalina 10.15 (19A583) | 2019.10.14 | 正常升级，无异常 |
-| macOS Catalina 10.15 (19A602) | 2019.10.18 | 正常升级，无异常 |
-| macOS Catalina 10.15.1 (19B88) | 2019.11.1 | 正常升级，无异常 |
-| macOS Catalina 10.15.2 (19C57) | 2019.12.15| 正常升级，无异常 |
-| macOS Catalina 10.15.4 (19E287) | 2020.4.9| 正常升级，无异常 |
-| macOS Catalina 10.15.5 (19F96) | 2020.5.30| 正常升级，无异常 |
-| macOS Catalina 10.15.6 (19G73) | 2020.8.4| 正常升级，无异常 |
-| macOS Catalina 10.15.6 (19G2021) | 2020.8.13| 正常升级，无异常 |
-| macOS Catalina 10.15.7 (19H15) | 2020.11.8| 正常升级，无异常 |
+| 版本 | 日期 | 备注 | OpenCore 版本 |
+|-------------------------------|-----------|----------|----------|
+| macOS Mojave 10.14.2 (18C54)  | 2018.12.7 | 正常升级，无异常 | |
+| macOS Mojave 10.14.3 (18D42)  | 2019.1.23 | 正常升级，无异常 | |
+| macOS Mojave 10.14.3 (18D109) | 2019.2.11 | 正常升级，无异常 | |
+| macOS Mojave 10.14.4 (18E226) | 2019.3.26 | 正常升级，无异常 | |
+| macOS Mojave 10.14.5 (18F132) | 2019.5.16 | 正常升级，无异常 | |
+| macOS Mojave 10.14.6 (18G84)  | 2019.7.23 | 正常升级，无异常 | |
+| macOS Mojave 10.14.6 (18G87)  | 2019.8.6  | 正常升级，无异常 | |
+| macOS Mojave 10.14.6 (18G95)  | 2019.8.31 | 正常升级，无异常 | |
+| macOS Mojave 10.14.6 (18G103) | 2019.9.27 | 正常升级，无异常 | |
+| macOS Catalina 10.15 (19A583) | 2019.10.14 | 正常升级，无异常 | |
+| macOS Catalina 10.15 (19A602) | 2019.10.18 | 正常升级，无异常 | |
+| macOS Catalina 10.15.1 (19B88) | 2019.11.1 | 正常升级，无异常 | |
+| macOS Catalina 10.15.2 (19C57) | 2019.12.15| 正常升级，无异常 | |
+| macOS Catalina 10.15.4 (19E287) | 2020.4.9| 正常升级，无异常 | |
+| macOS Catalina 10.15.5 (19F96) | 2020.5.30| 正常升级，无异常 | |
+| macOS Catalina 10.15.6 (19G73) | 2020.8.4| 正常升级，无异常 | |
+| macOS Catalina 10.15.6 (19G2021) | 2020.8.13| 正常升级，无异常 | |
+| macOS Catalina 10.15.7 (19H15) | 2020.11.8| 正常升级，无异常 | |
+| macOS Big Sur 11.0.1 (20B29) | 2020.12.8| 正常升级，无异常 | 0.6.4 |
 
 ## 跑分测试
 
@@ -170,8 +171,6 @@ HSXX 代表的是 USB 2.0，SSXX 代表的是 USB 3.0。
 
 <img src="./images/cinebench.png" alt="cinebench-score">
 
-## 参考链接
+## 一些有用的链接
 
-1. [Opencore Vanilla Desktop Guide](https://khronokernel-2.gitbook.io/opencore-vanilla-desktop-guide/)
-2. [corpnewt/USBMap](https://github.com/corpnewt/USBMap)
-3. [cattyhouse/oc-guide](https://github.com/cattyhouse/oc-guide)
+1. [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
