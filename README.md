@@ -7,7 +7,7 @@
 该项目只针对我的配置，不要直接使用。使用的话需要特别注意两个问题：
 
 1. config-public.plist 里 `PlatformInfo` -> `Generic` 信息需要自己手动生成，生成方法请参考 [corpnewt/GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)。
-2. 不要使用 `OC/Kexts/USBPorts.kext`。
+2. 不要使用 `OC/Kexts/USBPorts.kext` 和 ACPI 配置。
 
 ## 硬件
 
