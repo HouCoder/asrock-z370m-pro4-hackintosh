@@ -62,11 +62,7 @@ Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
 ### CPU
 
-[SSDT-PLUG](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl) requires the correct CPU ID on your system and compile it to an aml file, without it you won't see the Powernap option in Energy Saver panel and your CPU frequency chart will be a roller coaster.
-
-In my case, scope is `_PR`, device is `PR00`, thus this is my SSDT-PLUG.dsl - [SSDT-PLUG.dsl](OC/ACPI/SSDT-PLUG.dsl).
-
-Find more details here - [Fixing Power Management: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug-methods/manual.html).
+[SSDT-PLUG.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl) requires the correct CPU ID on your system and compile it to an aml file, without it you won't see the Powernap option in Energy Saver panel and your CPU frequency chart will be a roller coaster in idle mode. In my case, scope is `_PR`, device is `PR00`, thus this is my SSDT-PLUG.dsl - [SSDT-PLUG.dsl](OC/ACPI/SSDT-PLUG.dsl). You can find more details here - [Fixing Power Management: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug-methods/manual.html).
 
 ### FileVault
 
@@ -93,11 +89,7 @@ Recommend to use a USB 2.0 port to install macOS if you have not configured your
 
 ### USB Port Configuration
 
-[SSDT-EC-USBX.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl) also needs properly configured.
-
-In my case, scope is `_SB.PCI0.LPCB`, device is `H_EC`, thus this is my SSDT-EC-USBX - [SSDT-EC-USBX.dsl](OC/ACPI/SSDT-EC-USBX.dsl).
-
-Find more details here - [Fixing Embedded Controllers: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-methods/manual.html).
+[SSDT-EC-USBX.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl) also needs properly configured. In my case, scope is `_SB.PCI0.LPCB`, device is `H_EC`, thus this is my SSDT-EC-USBX - [SSDT-EC-USBX.dsl](OC/ACPI/SSDT-EC-USBX.dsl). You can find more details here - [Fixing Embedded Controllers: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-methods/manual.html).
 
 Recommend to generate your own USB port map file - [The New Beginner's Guide to USB Port Configuration](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/).
 
