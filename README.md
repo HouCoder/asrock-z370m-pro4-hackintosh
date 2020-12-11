@@ -64,11 +64,7 @@ Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
 ### CPU
 
-[SSDT-PLUG](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl) 需要手动设置 CPU ID 后编译成 aml 文件后才能正常工作，如果没有设置正确会出现电源选项里面看不到 Powernap 选项和待机状态下 CPU 频率出现大幅波动的问题。
-
-以我的配置举例，scope 是 `_PR`，CPU ID 是 `PR00`，所以我的 SSDT-PLUG 应该是这样的 - [SSDT-PLUG.dsl](OC/ACPI/SSDT-PLUG.dsl)。
-
-详细的文档请参考 - [Fixing Power Management: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug-methods/manual.html)。
+[SSDT-PLUG.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-PLUG.dsl) 需要手动设置 CPU ID 后编译成 aml 文件后才能正常工作，如果没有设置正确会出现电源选项里面看不到 Powernap 选项和待机状态下 CPU 频率出现大幅波动的问题。以我的配置举例，scope 是 `_PR`，CPU ID 是 `PR00`，所以我的 SSDT-PLUG 应该是这样的 - [SSDT-PLUG.dsl](OC/ACPI/SSDT-PLUG.dsl)。详细的文档请参考 - [Fixing Power Management: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug-methods/manual.html)。
 
 ### FileVault
 
@@ -95,11 +91,7 @@ DevicePath = PciRoot(0x0)/Pci(0x1f,0x3)
 
 ### USB
 
-[SSDT-EC-USBX.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl) 也需要正确的设置。
-
-以我的配置举例，scope 是 `_SB.PCI0.LPCB`，device 是 `H_EC`，所以我的 SSDT-PLUG 应该是这样的 - [SSDT-EC-USBX.dsl](SSDT-EC-USBX.dsl)。
-
-详细的文档请参考 - [Fixing Embedded Controllers: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-methods/manual.html)。
+[SSDT-EC-USBX.dsl](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl) 也需要正确的设置。以我的配置举例，scope 是 `_SB.PCI0.LPCB`，device 是 `H_EC`，所以我的 SSDT-PLUG 应该是这样的 - [SSDT-EC-USBX.dsl](SSDT-EC-USBX.dsl)。详细的文档请参考 - [Fixing Embedded Controllers: Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-methods/manual.html)。
 
 USB 补丁制作请参考 - [The New Beginner's Guide to USB Port Configuration](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/)。
 
