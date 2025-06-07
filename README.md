@@ -166,3 +166,7 @@ HSXX 代表的是 USB 2.0，SSXX 代表的是 USB 3.0。
 ## 一些有用的链接
 
 1. [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
+
+----
+
+[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
